@@ -1,7 +1,17 @@
 const express = require('express'); //express framework 
+const bodyParser = require('body-parser');
+const mysql = require('mysql');
 var path = require('path');
 var router = express.Router(); //router object via express 
 const app = express();
+const connection = mysql.createPool({
+    //CHANGE THESE FIELDS THOMAS - Thomas
+    host    : 'localhost', 
+    user    : 'root', 
+    password    : 'S0mething!',
+    database    : 'my_db'
+
+});
 app.use(express.static(path.join(__dirname+'/about'))); //serves about.css static
 app.use("/about", express.static((__dirname+'/public'))); //this is supposed to serve the css, but does not
 router.get('/', function (req, res){
