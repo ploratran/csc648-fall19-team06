@@ -16,12 +16,13 @@
 <title>Bootstrap 4 Responsive Layout Example</title>
 <link rel=stylesheet href=https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css>
 <link rel=stylesheet href=style.css>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src=https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js></script>
 <script src=https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js></script>
 </head>
 <body>
     <!-- Navigation -->
-<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-3">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-3">
     <div class="container-fluid">
         <a class=navbar-brand href=#>
     
@@ -36,12 +37,10 @@
                 <a href="#" class="nav-item nav-link active">Home</a>
                 <a href="#" class="nav-item nav-link">Buy</a>
                 <a href="#" class="nav-item nav-link">Sell</a>
-                <a href = "/about" class="nav-item nav-link" role="button">About</a> 
             </div>
             <div class="navbar-nav ml-auto">
                 <a href="#" class="nav-item nav-link">Register</a>
                 <a href="#" class="nav-item nav-link">Login</a>
-                <a href="#" class="nav-item nav-link">Cart</a>
             </div>
         </div>
     </div>    
@@ -50,9 +49,10 @@
 <!-- Page Content -->
 <div class="container">
     
-    <div class = "searchBar">
-        <input type="text" placeholder="Search..">
-    </div>
+        <form class="example" action="/action_page.php" style="margin:auto;max-width:300px">
+            <input type="text" placeholder="Search.." name="search2">
+            <button type="submit"><i class="fa fa-search"></i></button>
+          </form>
     
     <div class="slideShow">
         <h1>Picture slide show</h1>
@@ -85,9 +85,9 @@
                 <p>Text</p>
             </div>
             <div class="col-md-6 text-md-right">
-                <a href="#" class="text-dark">Text</a> 
+                <a href="#" class="text-dark">About</a> 
                 <span class="text-muted mx-2">|</span> 
-                <a href="#" class="text-dark">more text</a>
+                <a href = "/about" class="text-dark">more text</a>
             </div>
         </div>
     </footer>
