@@ -14,11 +14,12 @@
         <input placeholder='Search here'></input>
         <span><button>Submit</button></span>
     </div> -->
-    <form>
+    <form action = /search method = "post">
         <select name='category'>
-            <option value=''>All</option>
-            <option value='electronics'>Electronics</option>
-            <option value='books'>Books</option>
+            <option>All</option>
+            <% for(var i=0; i < dropDownVals.length; i++) { %>
+                <option><%= JSON.stringify(dropDownVals[i]) %></option>
+             <% } %>
         </select>
         <input type='text' name='search' 
             value='' placeholder='Search here'
@@ -30,5 +31,6 @@
     </div>
     <div class='footer'>
         <footer><a href='/about'>About</a></footer>
+        <footer><a href='/inven'>inventory</a></footer>
     </div>
 <% include ../partials/footer %>

@@ -1,63 +1,24 @@
 const express = require('express'); //express framework 
-<<<<<<< HEAD
-const bodyParser = require('body-parser');
 const mysql = require('mysql');
-var path = require('path');
-var router = express.Router(); //router object via express 
-const app = express();
-const connection = mysql.createPool({
-    //CHANGE THESE FIELDS THOMAS - Thomas
-    host    : 'localhost', 
-    user    : 'root', 
-    password    : 'S0mething!',
-    database    : 'my_db'
-
-});
-app.use(express.static(path.join(__dirname+'/about'))); //serves about.css static
-app.use("/about", express.static((__dirname+'/public'))); //this is supposed to serve the css, but does not
-router.get('/', function (req, res){
-res.sendFile(path.join(__dirname+'/public/home.html')) //sends default home page
-});
-router.get('/about', function (req, res){
-    res.sendFile(path.join(__dirname+'/public/index.html')) //routes to about.html page
-});
-router.get('/aboutTT', function (req, res){
-        res.sendFile(path.join(__dirname+'/about/thomas.html')) //routes to aboutTT.html
-});
-router.get('/aboutMP', function (req, res){
-        res.sendFile(path.join(__dirname+'/about/manish.html')) //routes to aboutTT.html
-});
-router.get('/aboutPB', function (req, res){
-    res.sendFile(path.join(__dirname+'/about/poulomi.html')) //routes to aboutTT.html
-});
-router.get('/aboutJH', function (req, res){
-    res.sendFile(path.join(__dirname+'/about/jinan.html')) //routes to aboutTT.html
-});
-router.get('/aboutZW', function (req, res){
-    res.sendFile(path.join(__dirname+'/about/zihao.html')) //routes to aboutTT.html
-});
-router.get('/aboutPT', function (req, res){
-    res.sendFile(path.join(__dirname+'/about/tran.html')) //routes to aboutTT.html
-});
-=======
 const path = require('path');
-const mysql = require('mysql');
 const bodyparser = require('body-parser');
 const aboutRouter = require('./routers/about');
 const homeRouter = require('./routers/home');
->>>>>>> c7378da048c0d0126d16e0e8568bfafd2b7831bf
+const invenRouter = require('./routers/inven');
 const port = 3000; //port #, can change if there is an issue persisting
-
+var router = express.Router();
+ 
 const app = express();
-app.use(bodyparser.json());
 
+
+ 
 // const mysqlConnection = mysql.createConnection({
 //     host: 'localhost',
 //     user: 'root',
-//     password: 'testtest',
-//     database: 'testdb'
+//     password: 'password',
+//     database: 'inventory'
 // });
-
+ 
 // mysqlConnection.connect((err) => {
 //     if (!err) {
 //         console.log('Database successfully connected');
@@ -65,17 +26,53 @@ app.use(bodyparser.json());
 //         console.log('Error connecting: ' + JSON.stringify(err, undefined, 2));
 //     }
 // });
-
+ 
+// app.get('/inven',(req, res)=>{
+//     mysqlConnection.query("SELECT * FROM inventory.electronics",(err, rows, fields)=>{
+//         if(!err){
+//         res.send(rows);
+//         console.log("Data taken from SQL: " + JSON.stringify(rows));
+//         }
+//         else
+//         console.log("This is the error", err);
+//     })
+//  });
+// router.get('/', function(req, res){
+//     mysqlConnection('SELECT * FROM inventory.Furniture', function(err, result){
+//         if(!err){
+//             res.render('page', {
+//                 clients: result
+//             });
+//         }
+//         else console.log('Error while performing query');
+//     })
+// })
+// router.get('/', function(req, res, next) {
+//     mysql.connect(mysqlConnection).then(() => {
+//         return sql.query`select * from inventory`;
+//     }).then(result => {
+//         console.log(result)
+//         // Pass the DB result to the template
+//         res.render('views/pages/home', {menu: result})
+//     }).catch(err => {
+//         console.log(err)
+//     })
+// });
+app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'ejs'); //set view engine as ejs
 app.set('views', path.join(__dirname, 'views')); //serve files in views folder
-
+ 
 app.use(express.static('public')); //serve public static files
-
+ 
 app.use('/', homeRouter);
 app.use('/', aboutRouter);
-
+app.use('/', invenRouter);
+ 
 app.use(function(req,res) {
-    res.status(400).render(path.join(__dirname, '/views/pages/404'));
+   res.status(400).render(path.join(__dirname, '/views/pages/404'));
 });
-
+ 
 app.listen(port, () => console.log('Listening on port 3000'));
+// module.exports = router;
+
+
