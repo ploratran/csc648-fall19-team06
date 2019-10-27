@@ -14,7 +14,8 @@ const mysqlConnection = mysql.createConnection({
 });
 var menu = {};
 //mysqlConnection.query("SELECT appliances FROM inventory.category",(err, rows, fields)=>{
-    mysqlConnection.query("SELECT column_name FROM information_schema.columns WHERE table_name = 'electronics' and table_schema = 'inventory'",(err, rows, fields)=>{
+    mysqlConnection.query
+  ("SELECT column_name FROM information_schema.columns WHERE table_name = 'products' and table_schema = 'inventory'",(err, rows, fields)=>{
     if(!err){
     console.log("Data taken from SQL: " + JSON.stringify(rows));
     
@@ -30,7 +31,7 @@ var menu = {};
 const pages = path.join(__dirname, '../views/pages')
 
 router.get('/', function(req, res, next) {
-    res.render(pages + '/home', {dropDownVals: menu})
+    res.render(pages + '/home', {dropDownVals: menu}) //displays column names
 });
 
 // app.get('/search', function(req, res){ //GET method to access DB and return results in JSON
@@ -47,9 +48,9 @@ router.get('/', function(req, res, next) {
 //   });
     
   
-  app.post('/search', function(req, res) { 
-    console.log(req.body.search);
-  })
+  // app.post('/search', function(req, res) { 
+  //   console.log(req.body.search);
+  // })
 
  
   // app.post('/search', function(req, res){ //POST method to access DB and return results in JSON

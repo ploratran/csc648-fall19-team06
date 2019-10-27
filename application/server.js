@@ -10,15 +10,16 @@ var router = express.Router();
 const app = express();
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({ extended: true }));
- 
-const mysqlConnection = mysql.createConnection({
+
+
+const mysqlConnection = mysql.createConnection({ //mysql connection information
     host: 'localhost',
     user: 'root',
     password: 'password',
     database: 'inventory'
 });
  
-mysqlConnection.connect((err) => {
+mysqlConnection.connect((err) => { //creates connection
     if (!err) {
         console.log('Database successfully connected');
     } else {
@@ -67,16 +68,17 @@ app.use('/', homeRouter);
 app.use('/', aboutRouter);
 app.use('/', invenRouter);
 
-app.post('/search', function(req, res) { 
-     var input = req.body.search;
-     console.log(input);
-    mysqlConnection.query('SELECT * FROM electronics WHERE inventory.electronics LIKE "%' + input + '%"',
+app.post('/search', function(req, res) { //function for searching through the database
+     var input = req.body.search; //stores user input
+     console.log("user is searching for " + input);
+    mysqlConnection.query('SELECT * FROM electronics WHERE name LIKE "%' + input + '%"', //%like query
     function(err, rows, fields){
       if(err) throw err;
           var data = [];
-          for(i=0;i<rows.length;i++){
-            data.push(rows[i].product);
-          }
+          for(i=0;i<rows.length;i++){ //pushes results
+            data.push(rows[i].name); 
+            data.push(rows[i].description);
+          } 
           res.end(JSON.stringify(data));
  });
 });

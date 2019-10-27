@@ -1,8 +1,24 @@
 <% include ../partials/header %>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <a href='/'><img alt='logo' src='/csc648-logo.svg' width='50' height='50'></a>
     <p>SFSU CSC648 - TEAM 06</p>
     <p>Fall 2019 - Section 01</p>
     <p>Team 6</p>
+<!-- <script>
+    $(document).ready(() => {
+    $("#searchbtn").click(() => {
+        $.ajax({
+            url: '/search',
+            type: 'POST',
+            dataType: 'json',
+            success: (data) => {
+                console.log('searching');
+                $('#result').html(data);
+            }
+        })
+    })
+    })
+    </script> -->
     <!-- <div>
         <span>
             <select>
@@ -14,23 +30,24 @@
         <input placeholder='Search here'></input>
         <span><button>Submit</button></span>
     </div> -->
+
     <form method = 'post', action ='/search' >
         <select name='category'>
-            <option>All</option>
-            <% for(var i=0; i < dropDownVals.length; i++) { %>
+            <option>All</option>  
+            <% for(var i=0; i < dropDownVals.length; i++) { %> 
                 <option><%= JSON.stringify(dropDownVals[i]) %></option>
              <% } %>
         </select>
         <input type='text' name='search' 
             value='' placeholder='Search here'
         >
-        <button>Search</button>
+        <button id='searchbtn'>Search</button>
     </form>
     <div id='result'>
     
     </div>
     <div class='footer'>
         <footer><a href='/about'>About</a></footer>
-        <footer><a href='/inven'>inventory</a></footer>
+        <!-- <footer><a href='/inven'>inventory</a></footer> -->
     </div>
 <% include ../partials/footer %>
