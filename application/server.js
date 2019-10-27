@@ -1,6 +1,6 @@
 const express = require('express'); //express framework 
 const path = require('path');
-const mysql = require('mysql');
+// const mysql = require('mysql');
 const bodyparser = require('body-parser');
 const aboutRouter = require('./routers/about');
 const homeRouter = require('./routers/home');
