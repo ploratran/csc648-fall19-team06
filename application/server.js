@@ -73,7 +73,7 @@ app.post('/search', function(req, res) { //function for searching through the da
      var input2 = req.body.category;
      console.log(input2);
      console.log("user is searching for " + input);
-    mysqlConnection.query('SELECT * FROM Products WHERE type LIKE "%' + input + '%" OR type LIKE "%' + input2 + '%"', //%like query
+    mysqlConnection.query('SELECT * FROM Products WHERE type LIKE "%' + input + '%"', //%like query
     function(err, rows, fields){
       if(err) throw err;
           var data = [];
