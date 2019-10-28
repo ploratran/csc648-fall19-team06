@@ -10,19 +10,22 @@ const mysqlConnection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: 'password',
-    database: 'inventory'
+    database: 'sfsuweb'
 });
 var menu = {};
+var row = [];
 //mysqlConnection.query("SELECT appliances FROM inventory.category",(err, rows, fields)=>{
-    mysqlConnection.query
-  ("SELECT column_name FROM information_schema.columns WHERE table_name = 'products' and table_schema = 'inventory'",(err, rows, fields)=>{
+    //mysqlConnection.query("SELECT column_name FROM information_schema.columns WHERE table_name = 'electronics' and table_schema = 'inventory'",(err, rows, fields)=>{
+mysqlConnection.query("SELECT name FROM sfsuweb.Category",(err, rows, fields)=> {
     if(!err){
     console.log("Data taken from SQL: " + JSON.stringify(rows));
-    
+    for (var i = 0; i < rows.length; i++) {
+       row = rows[i];
+      console.log(row.category);
+  }
     menu = rows;
     console.log(menu);
     
-
     }
     else
     console.log("This is the error", err);

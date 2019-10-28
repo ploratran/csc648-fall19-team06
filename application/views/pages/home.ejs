@@ -32,16 +32,16 @@
     </div> -->
 
     <form method = 'post', action ='/search' >
-        <select name='category'>
-            <option>All</option>  
-            <% for(var i=0; i < dropDownVals.length; i++) { %> 
-                <option><%= JSON.stringify(dropDownVals[i]) %></option>
+        <select name='category' onchange="this.form.submit()">
+            <option>All</option>
+            <% for(var i=0; i < dropDownVals.length; i++) { %>
+                <option><%= JSON.stringify(dropDownVals[i].name) %></option>
              <% } %>
         </select>
-        <input type='text' name='search' 
-            value='' placeholder='Search here'
+        <input type='text' name='search'
+            value="" placeholder='Search here'
         >
-        <button id='searchbtn'>Search</button>
+        <button>Search</button>
     </form>
     <div id='result'>
     

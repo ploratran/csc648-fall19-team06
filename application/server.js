@@ -16,7 +16,7 @@ const mysqlConnection = mysql.createConnection({ //mysql connection information
     host: 'localhost',
     user: 'root',
     password: 'password',
-    database: 'inventory'
+    database: 'sfsuweb'
 });
  
 mysqlConnection.connect((err) => { //creates connection
@@ -70,22 +70,39 @@ app.use('/', invenRouter);
 
 app.post('/search', function(req, res) { //function for searching through the database
      var input = req.body.search; //stores user input
+     var input2 = req.body.category;
+     console.log(input2);
      console.log("user is searching for " + input);
-    mysqlConnection.query('SELECT * FROM electronics WHERE name LIKE "%' + input + '%"', //%like query
+    mysqlConnection.query('SELECT * FROM Products WHERE type LIKE "%' + input + '%" OR type LIKE "%' + input2 + '%"', //%like query
     function(err, rows, fields){
       if(err) throw err;
           var data = [];
           for(i=0;i<rows.length;i++){ //pushes results
-            data.push(rows[i].name); 
-            data.push(rows[i].description);
+            // data.push(rows[i].name); 
+            // data.push(rows[i].description);
+            data.push(rows[i]);
           } 
           res.end(JSON.stringify(data));
  });
 });
  
-//app.use(function(req,res) {
-//    res.status(400).render(path.join(__dirname, '/views/pages/404'));
+// app.post('/search/tv', function(req, res) { //function for searching through the database
+//    var input = req.body.search; //stores user input
+//    console.log("user is searching for " + input);
+//   mysqlConnection.query('SELECT name FROM inventory.electronics WHERE name LIKE "%' + input + '%"', //%like query
+//   function(err, rows, fields){
+//     if(err) throw err;
+//         var data = [];
+//         for(i=0;i<rows.length;i++){ //pushes results
+//           data.push(rows[i].name); 
+//           data.push(rows[i].description);
+//         } 
+//         res.end(JSON.stringify(data));
 // });
+// });
+app.use(function(req,res) {
+   res.status(400).render(path.join(__dirname, '/views/pages/404'));
+});
  
 app.listen(port, () => console.log('Listening on port 3000'));
 // module.exports = router;
