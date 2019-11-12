@@ -4,6 +4,9 @@ const mysql = require('mysql');
 const bodyparser = require('body-parser');
 const aboutRouter = require('./routers/about');
 const homeRouter = require('./routers/home');
+const sellRouter = require('./routers/sell');
+const loginRouter = require('./routers/login');
+const registerRouter = require('./routers/register');
 const port = 3000; //port #, can change if there is an issue persisting
 
 const app = express();
@@ -31,6 +34,9 @@ app.use(express.static('public')); //serve public static files
 
 app.use('/', homeRouter);
 app.use('/', aboutRouter);
+app.use('/', sellRouter);
+app.use('/', loginRouter);
+app.use('/', registerRouter);
 
 app.use(function(req,res) {
     res.status(400).render(path.join(__dirname, '/views/pages/404'));

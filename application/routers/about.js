@@ -6,6 +6,7 @@ const router = express.Router(); //router object via express
 const aboutPage = path.join(__dirname, '../views/about/');
 
 router.get('/aboutTT', function (req, res){
+    console.log(aboutPage + 'aboutTT');
     res.sendFile(path.join(aboutPage + 'thomas.html')); //routes to aboutTT.html
 });
 
