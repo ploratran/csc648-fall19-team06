@@ -32,7 +32,7 @@ mysqlConnection.query("SELECT name FROM sfsuweb.Category",(err, rows, fields)=> 
 })
 
 const pages = path.join(__dirname, '../views/pages')
-
+var menu = [{'name':'a'},{"name":'b'}];
 router.get('/', function(req, res, next) {
     res.render(pages + '/home', {dropDownVals: menu}) //displays column names
 });
