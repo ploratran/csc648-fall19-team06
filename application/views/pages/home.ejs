@@ -34,18 +34,29 @@
     <form method = 'post', action ='/search' >
         <select name='category' onchange="this.form.submit()">
             <option>All</option>
-            <% for(var i=0; i < dropDownVals.length; i++) { %>
-                <option><%= JSON.stringify(dropDownVals[i].name) %></option>
-             <% } %>
+
         </select>
         <input type='text' name='search'
             value="" placeholder='Search here'
         >
         <button>Search</button>
     </form>
+
     <div id='result'>
     
     </div>
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+        <div class="file-field input-field">
+            <div class="btn grey">
+                <span>File</span>
+                <input name="myImage" type="file">
+            </div>
+            <div class="file-path-wrapper">
+                <input class="file-path validate" type="text">
+            </div>
+        </div>
+        <button type="submit" class="btn">Submit</button>
+    </form>
     <div class='footer'>
         <footer><a href='/about'>About</a></footer>
         <!-- <footer><a href='/inven'>inventory</a></footer> -->

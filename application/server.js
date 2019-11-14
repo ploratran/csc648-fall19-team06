@@ -8,8 +8,44 @@ const invenRouter = require('./routers/inven');
 const port = 3000; //port #, can change if there is an issue persisting
 var router = express.Router();
 const app = express();
+const multer = require('multer');
+const ejs = require('ejs');
+
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({ extended: true }));
+
+// Set The Storage Engine
+const storage = multer.diskStorage({
+    destination: './public/uploads/',
+    filename: function(req, file, cb){
+        cb(null,file.fieldname + '-' + Date.now() + path.extname(file.originalname));
+    }
+});
+
+// Init Upload
+const upload = multer({
+    storage: storage,
+    limits:{fileSize: 1000000},
+    fileFilter: function(req, file, cb){
+        checkFileType(file, cb);
+    }
+}).single('myImage');
+
+// Check File Type
+function checkFileType(file, cb){
+    // Allowed ext
+    const filetypes = /jpeg|jpg|png|gif/;
+    // Check ext
+    const extname = filetypes.test(path.extname(file.originalname).toLowerCase());
+    // Check mime
+    const mimetype = filetypes.test(file.mimetype);
+
+    if(mimetype && extname){
+        return cb(null,true);
+    } else {
+        cb('Error: Images Only!');
+    }
+}
 
 
 const mysqlConnection = mysql.createConnection({ //mysql connection information
@@ -63,10 +99,31 @@ app.set('view engine', 'ejs'); //set view engine as ejs
 app.set('views', path.join(__dirname, 'views')); //serve files in views folder
  
 app.use(express.static('public')); //serve public static files
+app.get('/', (req, res) => res.render('pages/home'));
+app.post('/upload', (req, res) => {
+    upload(req, res, (err) => {
+    if(err){
+        res.render('pages/home', {
+            msg: err
+        });
+    } else {
+        if(req.file == undefined){
+            res.render('pages/home', {
+                msg: 'Error: No File Selected!'
+            });
+        } else {
+            res.render('pages/home', {
+                msg: 'File Uploaded!',
+                file: `uploads/${req.file.filename}`
+            });
+        }
+    }
+});
+});
  
 app.use('/', homeRouter);
-app.use('/', aboutRouter);
-app.use('/', invenRouter);
+app.use('/about', aboutRouter);
+app.use('/inven', invenRouter);
 
 app.post('/search', function(req, res) { //function for searching through the database
      var input = req.body.search; //stores user input
