@@ -42,4 +42,5 @@ app.use(function(req,res) {
     res.status(400).render(path.join(__dirname, '/views/pages/404'));
 });
 
-app.listen(port, () => console.log('Listening on port 3000'));
+app.listen(port, () => console.log(`Listening on port ${port}`));
+
