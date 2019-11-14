@@ -13,6 +13,4 @@ router.get('/about', function(req, res) {
     res.render(pages + '/about'); //render about.ejs
 });
 
-
-
 module.exports = router;
