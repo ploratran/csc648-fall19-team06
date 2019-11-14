@@ -4,7 +4,7 @@ const mysql = require('mysql');
 const bodyparser = require('body-parser');
 const aboutRouter = require('./routers/about');
 const homeRouter = require('./routers/home');
-const port = 3005; //port #, can change if there is an issue persisting
+const port = 3000; //port #, can change if there is an issue persisting
 
 const app = express();
 app.use(bodyparser.json());
