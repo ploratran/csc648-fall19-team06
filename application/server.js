@@ -99,6 +99,7 @@ app.set('view engine', 'ejs'); //set view engine as ejs
 app.set('views', path.join(__dirname, 'views')); //serve files in views folder
  
 app.use(express.static('public')); //serve public static files
+
 app.get('/', (req, res) => res.render('pages/home'));
 app.post('/upload', (req, res) => {
     upload(req, res, (err) => {
@@ -121,6 +122,30 @@ app.post('/upload', (req, res) => {
 });
 });
  
+
+app.use(express.static('./public'))
+app.get('/', (req, res) => res.render('index'));
+app.post('/upload', (req, res) => {
+    upload(req, res, (err) => {
+        if(err){
+            res.render('index', {
+                msg: err
+            });
+        } else {
+            if(req.file == undefined){
+                res.render('index', {
+                    msg: 'Error: No File Selected!'
+                });
+            } else {
+                res.render('index', {
+                    msg: 'File Uploaded!',
+                    file: `uploads/${req.file.filename}`
+                });
+            }
+        }
+    });
+});
+
 app.use('/', homeRouter);
 app.use('/about', aboutRouter);
 app.use('/inven', invenRouter);

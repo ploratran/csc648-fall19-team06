@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="60b2ff41-d6fe-468b-a5bc-883499943447" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routers/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/routers/home.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Views/index.ejs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/pages/about.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/pages/about.ejs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/pages/home.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/pages/home.ejs" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -21,15 +19,15 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routers/inven.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-361" />
+            <state relative-caret-position="-831" />
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-216">
-              <caret line="115" column="38" lean-forward="true" selection-start-line="115" selection-start-column="38" selection-end-line="115" selection-end-column="38" />
+            <state relative-caret-position="-295">
+              <caret line="48" selection-start-line="48" selection-end-line="48" />
             </state>
           </provider>
         </entry>
@@ -46,10 +44,15 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/pages/home.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-39">
-              <caret line="36" selection-start-line="36" selection-end-line="36" />
+            <state relative-caret-position="201">
+              <caret line="47" selection-start-line="47" selection-end-line="47" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/pages/about.ejs">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -66,9 +69,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/server.js" />
         <option value="$PROJECT_DIR$/routers/home.js" />
         <option value="$PROJECT_DIR$/views/pages/home.ejs" />
+        <option value="$PROJECT_DIR$/server.js" />
       </list>
     </option>
   </component>
@@ -153,12 +156,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1573700847453</updated>
-      <workItem from="1573700848852" duration="1445000" />
+      <workItem from="1573700848852" duration="1729000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1445000" />
+    <option name="totallyTimeSpent" value="1729000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1280" height="710" extended-state="6" />
@@ -198,11 +201,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/routers/inven.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-361" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routers/home.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
@@ -210,17 +208,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/views/index.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-11" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/pages/about.ejs">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/views/pages/home.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-39">
-          <caret line="36" selection-start-line="36" selection-end-line="36" />
+        <state relative-caret-position="201">
+          <caret line="47" selection-start-line="47" selection-end-line="47" />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routers/inven.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-831" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-216">
-          <caret line="115" column="38" lean-forward="true" selection-start-line="115" selection-start-column="38" selection-end-line="115" selection-end-column="38" />
+        <state relative-caret-position="-295">
+          <caret line="48" selection-start-line="48" selection-end-line="48" />
         </state>
       </provider>
     </entry>
