@@ -45,4 +45,16 @@
     </nav>
 </head>
 <body>
+    <!-- Plug data from backend here -->
+    <div id='result'>
+        <h6>1-<%= listing.length %> of <%= listing.length%> results</h6>
+        <p>
+            <% for (var i = 0; i < listing.length; i++) { %>
+            <%= listing[i].title -%>
+            <%= listing[i].price -%>
+            <%= listing[i].description -%>
+            <% } %>
+        </p>
+    </div>
+    
 <% include ../partials/footer %>

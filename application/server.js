@@ -7,26 +7,30 @@ const homeRouter = require('./routers/home');
 const sellRouter = require('./routers/sell');
 const loginRouter = require('./routers/login');
 const registerRouter = require('./routers/register');
-const port = 3000; //port #, can change if there is an issue persisting
+const db = require('./model/database');
+const port = 3001; //port #, can change if there is an issue persisting
 
 const app = express();
 app.use(bodyparser.json());
 
-// const mysqlConnection = mysql.createConnection({
-//     host: 'localhost',
-//     user: 'root',
-//     password: 'testtest',
-//     database: 'testdb'
+// connect to db
+// db.connect((err) => {
+//     if (err) {
+//         //throw err;
+//         console.log('Error connecting ...');
+//     } 
+//     console.log('Database connected ...');
 // });
 
-// mysqlConnection.connect((err) => {
-//     if (!err) {
-//         console.log('Database successfully connected');
-//     } else {
-//         console.log('Error connecting: ' + JSON.stringify(err, undefined, 2));
-//     }
+// query db
+// db.query('SELECT * FROM products', (err, data) => {
+//     if (err) {
+//         console.log('err')
+//         return;
+//     } 
+//     console.log(data);
 // });
-
+    
 app.set('view engine', 'ejs'); //set view engine as ejs
 app.set('views', path.join(__dirname, 'views')); //serve files in views folder
 
@@ -42,4 +46,4 @@ app.use(function(req,res) {
     res.status(400).render(path.join(__dirname, '/views/pages/404'));
 });
 
-app.listen(port, () => console.log('Listening on port 3000'));
+app.listen(port, () => console.log(`Listening on port ${port}`));
