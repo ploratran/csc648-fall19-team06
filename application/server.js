@@ -12,24 +12,6 @@ const port = 3001; //port #, can change if there is an issue persisting
 
 const app = express();
 app.use(bodyparser.json());
-
-// connect to db
-// db.connect((err) => {
-//     if (err) {
-//         //throw err;
-//         console.log('Error connecting ...');
-//     } 
-//     console.log('Database connected ...');
-// });
-
-// query db
-// db.query('SELECT * FROM products', (err, data) => {
-//     if (err) {
-//         console.log('err')
-//         return;
-//     } 
-//     console.log(data);
-// });
     
 app.set('view engine', 'ejs'); //set view engine as ejs
 app.set('views', path.join(__dirname, 'views')); //serve files in views folder

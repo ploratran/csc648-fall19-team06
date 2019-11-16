@@ -1,61 +1,56 @@
+<!-- import Header includes Navbar, Banner Here!!! -->
 <% include ../partials/header %>
 
-    <style>
-    .navbar-nav{
-        margin: 0px auto;
-    }
-    </style>
-    
-    <link rel='stylesheet' href='home.css'>
-    <link rel=stylesheet href=style.css>
-    <link rel=stylesheet href=https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src=https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js></script>
-    <script src=https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js></script>
-    
-    
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-3">
-        <div class="container-fluid">
-            <a href='/'><img alt='logo' src='/csc648-logo.svg' width='50' height='50'></a>
-            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav">
-                    <form>
-                        <select name='category'>
-                            <option value=''>All</option>
-                            <option value='electronics'>Electronics</option>
-                            <option value='books'>Books</option>
-                        </select>
-                        <input type='text' name='search' 
-                            value='' placeholder='Search here'
-                        >
-                        <button>Search</button>
-                    </form>
-                </div>
-                <div class="navbar-nav ml-auto">
-                    <a href="/sell" class="nav-item nav-link">Sell</a>
-                    <a href="/login" class="nav-item nav-link">Login</a>
-                    <a href="/register" class="nav-item nav-link">Register</a>
-                </div>
-            </div>
-        </div>    
-    </nav>
-</head>
+<!-- Start with the Body Here -->
 <body>
-
-    <!-- Plug data from backend here -->
-    <div id='result'>
-        <h6>1-<%= listing.length %> of <%= listing.length%> results</h6>
-        <p>
-            <% for (var i = 0; i < listing.length; i++) { %>
-            <%= listing[i].title -%>
-            <%= listing[i].price -%>
-            <%= listing[i].description -%>
-            <% } %>
-        </p>
+                            
+    <div class="container"> 
+        <div class="row">
+            <div class="col">
+                <h2>Books</h2>
+                <img src='' width="300" height="200">
+                <p>Picture gallory and some text</p>
+                <p><a href="" target="_blank" class="btn btn-success">Shop</a></p>
+            </div>
+            <div class="col">
+                <h2>Clothes</h2>
+                <img src=""width="300" height="200">
+                <p>Picture gallory and some text</p>
+                <p><a href="" target="_blank" class="btn btn-success">Shop</a></p>
+            </div>
+            <div class="col">
+                <h2>Furniture</h2>
+                <img src=""width="300" height="200">
+                <p>Picture gallory and some text</p>
+                <p><a href="" target="_blank" class="btn btn-success">Shop</a></p>
+            </div>
+        </div>
     </div>
-    
+                       
+    <div class="container"> 
+        <div class="row">
+            <div class="col">
+                <h2>Electronics</h2>
+                <img src=""width="300" height="200">
+                <p>Picture gallory and some text</p>
+                <p><a href="" target="_blank" class="btn btn-success">Shop</a></p>
+            </div>
+            <div class="col">
+                <h2>Sport Gears</h2>
+                <img src=""width="300" height="200">
+                <p>Picture gallory and some text</p>
+                <p><a href="" target="_blank" class="btn btn-success">Shop</a></p>
+            </div>
+            <div class="col">
+                <h2>Event Tickets</h2>
+                <img src=""width="300" height="200">
+                <p>Picture gallory and some text</p>
+                <p><a href="" target="_blank" class="btn btn-success">Shop</a></p>
+            </div>
+        </div>
+    </div>
+
+<!-- DO NOT PUT </body> TAG HERE!!! -->
+
+<!-- import Footer HERE!!! -->
 <% include ../partials/footer %>
