@@ -1,50 +1,97 @@
 <% include ../partials/header %>
-seller page
+
 <!DOCTYPE html>
+
 <html>
+
+<style>
+    <% include ./css/sb-admin.css %>?
+
+</style>
+
 <body>
-      <form>
-      Please choose your product categories
-         <select name = "dropdown">
-        <option value="/">Accessories</option>
-        <option value="/">Books</option>
-        <option value="/">Electronics</option>
-        <option value="/">Furniture</option>
-         </select>
-      <br>
-      <br>
-         Description : <br />
-         <textarea rows = "5" cols = "50" name = "description">
-            Enter description here...
-         </textarea>
-         <br>
-         <br>
-         Price : <input type = "number" name = "" />
-         <br>
-         <br>
-         Title of your procuct: <input type = "text" name = "" />
-         <br>
-         <br>
-         Please select your transfer location
-         <select name = "dropdown">
-            <option value = "" selected>Library</option>
-            <option value = "">xx Hall</option>
-         </select>
-		<br>
-        <br>
-      	Choose File to upload product image
-        <br>
-         <input type = "file" name = "fileupload" accept = "image/*" />
-		<br>
-        <br>
-        <br>
-         <input type = "submit" name = "submit" value = "Submit" />
-         <input type = "reset" name = "reset"  value = "Reset" />
-      </form>
-    
+
+
+    <div class="container">
+        <div class="card card-register mx-auto mt-5">
+            <div class="card-header">Seller page</div>
+            <div class="card-body">
+
+                <form>
+                    <div class="form-group">
+                        Please choose your product categories:
+                        <select name="dropdown">
+                            <option value="/">Accessories</option>
+                            <option value="/">Books</option>
+                            <option value="/">Electronics</option>
+                            <option value="/">Furniture</option>
+                        </select>
+
+                    </div>
+                    <div class="form-group">
+                        Description : <br />
+                        <textarea rows="5" cols="50" name="description">Enter description here...</textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-col">
+                            <div class="col-sm-6">
+                                <div class="form-label-group">
+                                    Price : <input type="number" name="" />
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-label-group">
+                                    Title of your procuct: <input type="text" name="" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <p>Please select your transfer location: </p>
+                        <select name="dropdown">
+                            <option value="" selected>Library</option>
+                            <option value="">xx Hall</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <p>Choose File to upload product image:</p>
+
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+                            </div>
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                                <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <a class="btn btn-primary btn-block" href="login.html">Submit</a>
+                        <input class="btn btn-secondary btn-block" type="reset" name="reset" value="Reset" />
+                    </div>
+                </form>
+
+            </div>
+        </div>
+
     </div>
-    
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
 </body>
+
 </html>
 
 <% include ../partials/footer %>
