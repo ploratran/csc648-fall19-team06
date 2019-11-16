@@ -40,6 +40,20 @@ body {
     text-align: center;
 }
 
+body {
+  min-height: 900px;
+  margin-bottom: 100px;
+  clear: both;
+}
+
+.container{
+ text-align: center; 
+}
+
+.sell_form{
+  text-align: center; 
+}
+
 footer {
     position: absolute;
     bottom: 0;
