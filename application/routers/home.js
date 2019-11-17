@@ -6,17 +6,8 @@ const router = express.Router();
 
 const pages = path.join(__dirname, '../views/pages');
 
-// query:
-const sql = 'SELECT * FROM products';
-
 router.get('/', (req, res) => {
-    db.query(sql, (err, data) => {
-        if (err) {
-            console.log('err');
-            return;
-        } 
-        res.render(pages + '/home', { listing: data });
-    });
+    res.render(pages + '/home');
 });
 
 router.get('/about', (req, res) => {
