@@ -3,7 +3,7 @@ const path = require('path');
 const mysql = require('mysql');
 const bodyparser = require('body-parser');
 const db = require('./model/database');
-const port = 3001; //port #, can change if there is an issue persisting
+const port = 3000; //port #, can change if there is an issue persisting
 
 // connect to db:
 db.connect((err) => {
