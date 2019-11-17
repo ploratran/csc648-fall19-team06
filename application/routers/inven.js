@@ -1,19 +1,19 @@
 //this is a test build page
-const express = require('express');
-const path = require('path');
-const mysql = require('mysql');
-const bodyparser = require('body-parser');
-const app = express();
-const router = express.Router();
-const pages = path.join(__dirname, '../views/pages')
-const mysqlConnection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'password',
-    database: 'inventory'
-});
-app.use(bodyparser.json());
-app.use(bodyparser.urlencoded({ extended: false }));
+// const express = require('express');
+// const path = require('path');
+// const mysql = require('mysql');
+// const bodyparser = require('body-parser');
+// const app = express();
+// const router = express.Router();
+// const pages = path.join(__dirname, '../views/pages')
+// const mysqlConnection = mysql.createConnection({
+//     host: 'localhost',
+//     user: 'root',
+//     password: 'password',
+//     database: 'inventory'
+// });
+// app.use(bodyparser.json());
+// app.use(bodyparser.urlencoded({ extended: false }));
 // router.get('/inven',(req, res)=>{
 //     mysqlConnection.query("SELECT name FROM inventory.electronics",(err, rows, fields)=>{
 //         if(!err){
@@ -24,17 +24,17 @@ app.use(bodyparser.urlencoded({ extended: false }));
 //         console.log("This is the error", err);
 //     })
 //  });
-var menu = {};
-mysqlConnection.query("SELECT column_name FROM information_schema.columns WHERE table_name = 'electronics' and table_schema = 'inventory'",(err, rows, fields)=>{
-    if(!err){
-    console.log("Data taken from SQL: " + JSON.stringify(rows));
+// var menu = {};
+// mysqlConnection.query("SELECT column_name FROM information_schema.columns WHERE table_name = 'electronics' and table_schema = 'inventory'",(err, rows, fields)=>{
+//     if(!err){
+//     console.log("Data taken from SQL: " + JSON.stringify(rows));
     
-    menu = rows;
-    console.log(menu);
-}
-else
-console.log("This is the error", err);
-});
+//     menu = rows;
+//     console.log(menu);
+// }
+// else
+// console.log("This is the error", err);
+// });
 //  router.get('/search', function(req, res){ //GET method to access DB and return results in JSON
 //     // res.render(pages + '/home', {dropDownVals: menu})
 //     // console.log(req.body);
@@ -63,12 +63,6 @@ console.log("This is the error", err);
 //     res.render(pages + '/home', {})
 //   });
   
-
-
-
-
-
-
-module.exports = router;
+// module.exports = router;
 
 

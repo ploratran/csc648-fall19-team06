@@ -1,6 +1,5 @@
 const express = require('express'); //express framework 
 const path = require('path');
-const mysql = require('mysql');
 const bodyparser = require('body-parser');
 const db = require('./model/database');
 const port = 3000; //port #, can change if there is an issue persisting
@@ -8,7 +7,7 @@ const port = 3000; //port #, can change if there is an issue persisting
 // connect to db:
 db.connect((err) => {
     if (err) {
-        console.log('Error connecting ...');
+        console.log('Error connecting MySQL Database...');
         return;
     }
     console.log('MySQL Database Connected...');
