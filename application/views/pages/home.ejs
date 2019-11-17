@@ -1,6 +1,5 @@
 <!-- import Header includes Navbar, Banner Here!!! -->
 <% include ../partials/header %>
-<<<<<<< HEAD
 
 <!-- Start with the Body Here -->
 <body>
@@ -55,57 +54,3 @@
 
 <!-- import Footer HERE!!! -->
 <% include ../partials/footer %>
-=======
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <a href='/'><img alt='logo' src='/csc648-logo.svg' width='50' height='50'></a>
-    <p>SFSU CSC648 - TEAM 06</p>
-    <p>Fall 2019 - Section 01</p>
-    <p>Team 6</p>
-<!-- <script>
-    $(document).ready(() => {
-    $("#searchbtn").click(() => {
-        $.ajax({
-            url: '/search',
-            type: 'POST',
-            dataType: 'json',
-            success: (data) => {
-                console.log('searching');
-                $('#result').html(data);
-            }
-        })
-    })
-    })
-    </script> -->
-    <!-- <div>
-        <span>
-            <select>
-              <option>All</option>
-              <option>Electronics</option>
-              <option>Books</option>
-            </select>
-        </span>
-        <input placeholder='Search here'></input>
-        <span><button>Submit</button></span>
-    </div> -->
-
-    <form method = 'post', action ='/search' >
-        <select name='category' onchange="this.form.submit()">
-            <option>All</option>
-            <% for(var i=0; i < dropDownVals.length; i++) { %>
-                <option><%= JSON.stringify(dropDownVals[i].name) %></option>
-             <% } %>
-        </select>
-        <input type='text' name='search'
-            value="" placeholder='Search here'
-        >
-        <button>Search</button>
-    </form>
-    <div id='result'>
-    
-    </div>
-    <div class='footer'>
-        <footer><a href='/about'>About</a></footer>
-        <!-- <footer><a href='/inven'>inventory</a></footer> -->
-    </div>
-<% include ../partials/footer %>
->>>>>>> 5746a4b4f1a1dc18c45cb9c3a6dd3553cd8fe395
