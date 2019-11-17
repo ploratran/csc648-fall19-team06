@@ -5,7 +5,7 @@ const router = express.Router();
 
 const pages = path.join(__dirname, '../views/pages/');
 
-router.get('/sell', function(req, res) {
+router.get('/sell', (req, res) => {
     res.render(pages + 'sell'); //render sell.ejs
 });
 

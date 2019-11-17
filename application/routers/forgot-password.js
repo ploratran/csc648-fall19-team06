@@ -5,8 +5,8 @@ const router = express.Router();
 
 const pages = path.join(__dirname, '../views/pages/');
 
-router.get('/register', (req, res) => {
-    res.render(pages + 'register'); //render login.ejs
+router.get('/forgot-password', (req, res) => {
+    res.render(pages + 'forgot-password'); //render forgot-password.ejs
 });
 
 module.exports = router;
