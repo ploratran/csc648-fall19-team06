@@ -1,8 +1,9 @@
 <% include ../partials/header %>
 
+<!-- Start with the Body Here -->
 <body>
-    <div class="chat-popup" id="myForm">
-    </div>
+    <!-- <div class="chat-popup" id="myForm">
+    </div> -->
 
     <div class="container">
         <div class="card card-login mx-auto mt-5">
@@ -11,20 +12,34 @@
                     <form>
                         <div class="form-group">
                             <div class="form-label-group">
-                                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="required" autofocus="autofocus">
+                                <input class="form-control"
+                                    type="email" 
+                                    id="inputEmail"  
+                                    placeholder="Email address" 
+                                    required="required" 
+                                    autofocus="autofocus"
+                                >
                                 <label for="inputEmail">Email address</label>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="form-label-group">
-                                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="required">
+                                <input class="form-control" 
+                                    type="password" 
+                                    id="inputPassword" 
+                                    placeholder="Password" 
+                                required="required"
+                                >
                                 <label for="inputPassword">Password</label>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="checkbox">
                                 <label>
-                                    <input type="checkbox" value="remember-me">
+                                    <input 
+                                        type="checkbox" 
+                                        value="remember-me"
+                                    >
                                     Remember Password
                                 </label>
                             </div>
@@ -38,6 +53,8 @@
             </div>
         </div>
     </div>
+    
+<!-- DO NOT PUT </body> TAG HERE!!! -->
 
 <!-- import Footer HERE!!! -->
 <% include ../partials/footer %>
