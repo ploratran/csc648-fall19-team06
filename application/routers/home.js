@@ -1,28 +1,76 @@
-const express = require('express');
-const path = require('path');
-const db = require('../model/database');
+module.exports = {
+    //Home page
+    getHomePage: (req, res) => {
+        const path = require('path');
+        const pages = path.join(__dirname, '../views/pages');
+            let query = "SELECT * FROM `Category`"; // query database to get all the categories
+            db.query(query, (err, result) => {
+                if (err) {
+                    res.redirect('/');
+                }
+                res.render(pages + '/home', {
+                    title: "Welcome to SFSU | View Proucts",
+                    categories: result
+                });
+                // console.log("Categories", result);
+            });
+    },
+    sell: (req, res) => {
+        const path = require('path');
+        const pages = path.join(__dirname, '../views/pages');
+                res.render(pages + '/sell', {
+                    title: "Welcome to SFSU | View Proucts"
+                });
+    },
+    login: (req, res) => {
+        const path = require('path');
+        const pages = path.join(__dirname, '../views/pages');
+                res.render(pages + '/login', {
+                    title: "Welcome to SFSU | View Proucts"
+                });
+    },
+    register: (req, res) => {
+        const path = require('path');
+        const pages = path.join(__dirname, '../views/pages');
+                res.render(pages + '/register', {
+                    title: "Welcome to SFSU | View Proucts"
+                });
+    },
+    forgotPassword: (req, res) => {
+        const path = require('path');
+        const pages = path.join(__dirname, '../views/pages');
+                res.render(pages + '/forgot-password', {
+                    title: "Welcome to SFSU | View Proucts"
+                });
+    },
+    searchProducts: (req, res) => {
+        searchString = req.body.search;
+        categoryString = req.body.categoryName;
+        console.log("--->",searchString, categoryString);
+        // let query = "SELECT * FROM `Products` ORDER BY productId ASC"; // query database to get all the players
 
-const router = express.Router();
+        if( searchString != undefined &&  categoryString != undefined ){
+            var query = "SELECT * FROM Products WHERE title LIKE '%" +searchString+ "' AND categoryName LIKE '%" +categoryString+ "';"
+        }else if(searchString == undefined){
 
-const pages = path.join(__dirname, '../views/pages');
+            var query = "SELECT * FROM Products WHERE title LIKE '%" +searchString+ "';"
 
-// query:
-// const sql = 'SELECT * FROM products';
-//
-// router.get('/', (req, res) => {
-//     db.query(sql, (err, data) => {
-//         if (err) {
-//             console.log('err');
-//             return;
-//         }
-//         res.render(pages + '/home', { listing: data });
-//     });
-// });
-router.get('/', (req, res) => {
-    res.render(pages + '/home'); //render home.ejs
-});
-router.get('/about', (req, res) => {
-    res.render(pages + '/about'); //render about.ejs
-});
+        }else if(categoryString == undefined){
 
-module.exports = router;
+            var query = "SELECT * FROM Products WHERE title LIKE '%" +searchString+ "';"
+        }else{
+
+            var query = "SELECT * FROM Products"
+        }
+        // execute query
+        db.query(query, (err, result) => {
+            if (err) {
+                res.redirect('/');
+            }
+            res.render('index.ejs', {
+                title: "Welcome to SFSU | View Proucts",
+                products: result
+            });
+        });
+    },
+};
