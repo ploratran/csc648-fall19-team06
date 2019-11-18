@@ -35,13 +35,13 @@ app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({ extended: false }));
 app.use(express.static('public')); //serve public static files
 
-app.use('/', homeRouter);
-app.use('/', aboutRouter);
-app.use('/', sellRouter);
-app.use('/', loginRouter);
-app.use('/', registerRouter);
-app.use('/', forgotRouter);
-app.use('/', searchRouter);
+app.use('', homeRouter);
+app.use('', aboutRouter);
+app.use('', sellRouter);
+app.use('', loginRouter);
+app.use('', registerRouter);
+app.use('', forgotRouter);
+app.use('', searchRouter);
 
 app.use(function(req,res) {
     res.status(400).render(path.join(__dirname, '/views/pages/404'));
