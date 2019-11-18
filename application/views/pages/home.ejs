@@ -1,65 +1,56 @@
+<!-- import Header includes Navbar, Banner Here!!! -->
 <% include ../partials/header %>
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <a href='/'><img alt='logo' src='/csc648-logo.svg' width='50' height='50'></a>
-    <p>SFSU CSC648 - TEAM 06</p>
-    <p>Fall 2019 - Section 01</p>
-    <p>Team 6</p>
-<!-- <script>
-    $(document).ready(() => {
-    $("#searchbtn").click(() => {
-        $.ajax({
-            url: '/search',
-            type: 'POST',
-            dataType: 'json',
-            success: (data) => {
-                console.log('searching');
-                $('#result').html(data);
-            }
-        })
-    })
-    })
-    </script> -->
-    <!-- <div>
-        <span>
-            <select>
-              <option>All</option>
-              <option>Electronics</option>
-              <option>Books</option>
-            </select>
-        </span>
-        <input placeholder='Search here'></input>
-        <span><button>Submit</button></span>
-    </div> -->
 
-    <form method = 'post', action ='/search' >
-        <select name='category' onchange="this.form.submit()">
-            <option>All</option>
-
-        </select>
-        <input type='text' name='search'
-            value="" placeholder='Search here'
-        >
-        <button>Search</button>
-    </form>
-
-    <div id='result'>
-    
-    </div>
-
-    <form action="/upload" method="POST" enctype="multipart/form-data">
-        <div class="file-field input-field">
-            <div class="btn grey">
-                <span>File</span>
-                <input name="myImage" type="file">
+<!-- Start with the Body Here -->
+<body>
+                            
+    <div class="container"> 
+        <div class="row">
+            <div class="col">
+                <h2>Books</h2>
+                <img src='' width="300" height="200">
+                <p>See more Book deals</p>
+                <p><a href="" target="_blank" class="btn btn-success">Shop</a></p>
             </div>
-            <div class="file-path-wrapper">
-                <input class="file-path validate" type="text">
+            <div class="col">
+                <h2>Clothes</h2>
+                <img src=""width="300" height="200">
+                <p>See more Clothes deals</p>
+                <p><a href="" target="_blank" class="btn btn-success">Shop</a></p>
+            </div>
+            <div class="col">
+                <h2>Furniture</h2>
+                <img src=""width="300" height="200">
+                <p>See more Furniture deals</p>
+                <p><a href="" target="_blank" class="btn btn-success">Shop</a></p>
             </div>
         </div>
-        <button type="submit" class="btn">Submit</button>
-    </form>
-    <div class='footer'>
-        <footer><a href='/about'>About</a></footer>
-        <!-- <footer><a href='/inven'>inventory</a></footer> -->
     </div>
+                       
+    <div class="container"> 
+        <div class="row">
+            <div class="col">
+                <h2>Electronics</h2>
+                <img src=""width="300" height="200">
+                <p>See more Electronics deals</p>
+                <p><a href="" target="_blank" class="btn btn-success">Shop</a></p>
+            </div>
+            <div class="col">
+                <h2>Sport Gears</h2>
+                <img src=""width="300" height="200">
+                <p>See more Sport Gear deals</p>
+                <p><a href="" target="_blank" class="btn btn-success">Shop</a></p>
+            </div>
+            <div class="col">
+                <h2>Event Tickets</h2>
+                <img src=""width="300" height="200">
+                <p>See more Event Pass deals</p>
+                <p><a href="" target="_blank" class="btn btn-success">Shop</a></p>
+            </div>
+        </div>
+    </div>
+
+<!-- DO NOT PUT </body> TAG HERE!!! -->
+
+<!-- import Footer HERE!!! -->
 <% include ../partials/footer %>
