@@ -1,74 +1,60 @@
+<!-- Header has: Navbar, Banner only!!! -->
 <!DOCTYPE html>
-<html>
+<html lang='en'>
+<style> <% include ../pages/css/sb-admin.css %>? </style>
 <head>
+    <!-- MUST HAVE TAGS HERE!!! -->
     <meta charset="utf-8">
-    <title>SFSU Buy & Sell</title>
-    <link rel='stylesheet' href='home.css'>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-</head>
-<body>
-   <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
-   <a href='/'><img alt='logo' src='/csc648-logo.svg' width='50' height='50'></a>
-    <div class="container">
-      <div class="container">
-	<div class="row">
-		<div class="col-md-12">
-            <div class="input-group" id="adv-search">
-                <input type="text" class="form-control" placeholder="Search" />
-                <div class="input-group-btn">
-                    <div class="btn-group" role="group">
-                        <div class="dropdown dropdown-lg">
-                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><span class="caret"></span></button>
-                            <div class="dropdown-menu dropdown-menu-right" role="menu">
-                                <form class="form-horizontal" role="form">
-                                  <div class="form-group">
-                                    <label for="filter">Filter by</label>
-                                    <select class="form-control">
-                                        <option value="0" selected>All </option>
-                                        <option value="1">Books</option>
-                                        <option value="2">Furniture</option>
-                                        <option value="3">Electronics</option>
-                                    </select>
-                                  </div>
-                                </form>
-                            </div>
-                        </div>
-                        <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> search</button>
-                    </div>
-                </div>
-            </div>
-          </div>
-        </div>
-	</div>
-</div>
-       
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              My Course
-            </a>
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
-              <a class="dropdown-item" href="portfolio-1-col.html">My Course 1</a>
-              <a class="dropdown-item" href="portfolio-2-col.html">My Course 2</a>
-              <a class="dropdown-item" href="portfolio-3-col.html">My Course 3</a>
-            </div>
-          </li>
-           <li class="nav-item">
-            <a class="nav-link" href="all.html">Sell</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="books.html">Signin</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="furniture.html">Cart</a>
-          </li>
-          
-        </ul>
-      </div>
-  </nav>
-    
-</body>
-</html>
+    <title>SFSU Buy & Sell</title>
+
+    <!-- BANNER HERE!!! -->
+    <% include ./banner %>
+
+    <!-- NAVBAR HERE!!! -->
+    <% include ./navbar %>
+
+    <!-- 404 Page Google font -->
+	<link href="https://fonts.googleapis.com/css?family=Cabin:400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:900" rel="stylesheet">
+
+    <!-- CUSTOM CSS -->
+    <link type='text/css' rel='stylesheet' href='home.css'>
+    <link type='text/css' rel='stylesheet' href='style.css'> 
+
+    <!-- Bootstrap -->
+    <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'>
+    <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js'></script>
+
+    <!-- Font Awesome -->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+
+    <!-- JQUERY -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js'></script>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- ZIHAO Styling -->
+    <!-- Custom fonts for Login-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Custom styles for Login template-->
+    <link href="css/sb-admin.css" rel="stylesheet">
+
+    <!-- Custom fonts for Forgot -->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Custom styles for Forgot -->
+    <link href="css/sb-admin.css" rel="stylesheet">
+    <!-- End ZIHAO Styling -->
+
+</head>
+
+<!-- DO NOT PUT <body> TAGS and CLOSING <html> HERE!! -->
