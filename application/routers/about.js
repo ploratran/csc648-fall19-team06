@@ -30,3 +30,18 @@ router.get('/aboutPT', (req, res) => {
 });
 
 module.exports = router; //export router module to server.js
+
+// module.exports = {
+
+//     about: (req, res) => {
+//         const path = require('path');
+//         const pages = path.join(__dirname, '../views/pages');
+//         res.render(pages + '/about');
+//     },
+//     aboutTT: (req, res) => {
+//         const path = require('path');
+//         const aboutPage = path.join(__dirname, '../views/about/');
+//         res.sendFile(path.join(aboutPage + 'thomas.html')); //routes to aboutTT.html
+//     },
+
+// }

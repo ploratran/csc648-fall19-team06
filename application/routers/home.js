@@ -43,34 +43,9 @@ module.exports = {
                     title: "Welcome to SFSU | View Proucts"
                 });
     },
-    searchProducts: (req, res) => {
-        searchString = req.body.search;
-        categoryString = req.body.categoryName;
-        console.log("--->",searchString, categoryString);
-        // let query = "SELECT * FROM `Products` ORDER BY productId ASC"; // query database to get all the players
-
-        if( searchString != undefined &&  categoryString != undefined ){
-            var query = "SELECT * FROM Products WHERE title LIKE '%" +searchString+ "' AND categoryName LIKE '%" +categoryString+ "';"
-        }else if(searchString == undefined){
-
-            var query = "SELECT * FROM Products WHERE title LIKE '%" +searchString+ "';"
-
-        }else if(categoryString == undefined){
-
-            var query = "SELECT * FROM Products WHERE title LIKE '%" +searchString+ "';"
-        }else{
-
-            var query = "SELECT * FROM Products"
-        }
-        // execute query
-        db.query(query, (err, result) => {
-            if (err) {
-                res.redirect('/');
-            }
-            res.render('index.ejs', {
-                title: "Welcome to SFSU | View Proucts",
-                products: result
-            });
-        });
-    },
+    about: (req, res) => {
+        const path = require('path');
+        const pages = path.join(__dirname, '../views/pages');
+                res.render(pages + '/about');
+    }
 };

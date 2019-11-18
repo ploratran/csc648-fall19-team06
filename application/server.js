@@ -18,18 +18,12 @@ db.connect((err) => {
 })
 global.db = db; //globally declares db
 
-
-// define all routes: 
-const aboutRouter = require('./routers/about');
-const homeRouter = require('./routers/home');
-const sellRouter = require('./routers/sell');
-const loginRouter = require('./routers/login');
-const registerRouter = require('./routers/register');
-const forgotRouter = require('./routers/forgot-password');
-
 //Manish start
-const {getHomePage, sell, login, register, forgotPassword} = require('./routers/home');
-// const {addProductPage, addProduct, editProduct, editProductPage, deleteProduct} = require('./routes/player');
+const {getHomePage, sell, login, register, forgotPassword,about} = require('./routers/home');
+const {searchProducts, addProductPage, addProduct} = require('./routers/search');
+// const {about, aboutTT} = require('./routers/about');
+const aboutRouter = require('./routers/about');
+app.use('/', aboutRouter);
 //Manish end
 
 // set view engine as ejs:
@@ -47,6 +41,13 @@ app.get('/sell', sell);
 app.get('/login', login);
 app.get('/register', register);
 app.get('/forgot-password', forgotPassword);
+app.post('/searchProducts', searchProducts);
+app.get('/addProduct', addProductPage);
+app.post('/addProduct', addProduct);
+
+app.get('/about', about);
+// app.get('/aboutTT', aboutTT);
+
 
 // app.use('/', homeRouter);
 // app.use('/', aboutRouter);
