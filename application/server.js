@@ -48,32 +48,15 @@ function checkFileType(file, cb){
 }
 
 
-<<<<<<< HEAD
-app.use(express.static(path.join(__dirname+'/about'))); //serves about.css static
-app.use("/about", express.static((__dirname+'/public'))); //this is supposed to serve the css, but does not
-router.get('/', function (req, res){
-res.sendFile(path.join(__dirname+'/public/home.html')) //sends default home page
-});
-router.get('/about', function (req, res){
-    res.sendFile(path.join(__dirname+'/public/index.html')) //routes to about.html page
-});
-router.get('/aboutTT', function (req, res){
-        res.sendFile(path.join(__dirname+'/about/thomas.html')) //routes to aboutTT.html
-=======
 const mysqlConnection = mysql.createConnection({ //mysql connection information
     host: 'localhost',
     user: 'root',
     password: 'password',
     database: 'sfsuweb'
->>>>>>> 4113e824dbf575faec06e0bc5c981013f4a221d8
 });
 router.get('/aboutMP', function (req, res){
         res.sendFile(path.join(__dirname+'/about/manish.html')) //routes to aboutTT.html
 });
-<<<<<<< HEAD
-router.get('/aboutPB', function (req, res){
-    res.sendFile(path.join(__dirname+'/about/poulomi.html')) //routes to aboutTT.html
-=======
  
 // app.get('/inven',(req, res)=>{
 //     mysqlConnection.query("SELECT * FROM inventory.electronics",(err, rows, fields)=>{
@@ -178,7 +161,6 @@ app.post('/search', function(req, res) { //function for searching through the da
           } 
           res.end(JSON.stringify(data));
  });
->>>>>>> 4113e824dbf575faec06e0bc5c981013f4a221d8
 });
 router.get('/aboutJH', function (req, res){
     res.sendFile(path.join(__dirname+'/about/jinan.html')) //routes to aboutTT.html
