@@ -11,7 +11,7 @@ const port = 3000; //port #, can change if there is an issue persisting
 // connect to db:
 db.connect((err) => {
     if (err) {
-        console.log('Error connecting ...');
+        console.log('Error connecting MySQL Database...');
         return;
     }
     console.log('MySQL Database Connected...');
