@@ -23,6 +23,7 @@ const sellRouter = require('./routers/sell');
 const loginRouter = require('./routers/login');
 const registerRouter = require('./routers/register');
 const forgotRouter = require('./routers/forgot-password');
+const searchRouter = require('./routers/search');
 
 // set view engine as ejs:
 app.set('view engine', 'ejs'); 
@@ -30,6 +31,7 @@ app.set('views', path.join(__dirname, 'views')); //serve files in views folder
 
 // all middlewares: 
 app.use(bodyparser.json());
+app.use(bodyparser.urlencoded({ extended: false }));
 app.use(express.static('public')); //serve public static files
 
 app.use('/', homeRouter);
@@ -38,6 +40,7 @@ app.use('/', sellRouter);
 app.use('/', loginRouter);
 app.use('/', registerRouter);
 app.use('/', forgotRouter);
+app.use('/', searchRouter);
 
 app.use(function(req,res) {
     res.status(400).render(path.join(__dirname, '/views/pages/404'));
