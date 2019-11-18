@@ -23,7 +23,7 @@ db.connect((err) => {
 global.pages = pages;
 global.db = db; //globally declares db
 
-const {getHomePage, sell, login, register, forgotPassword,about} = require('./routers/home');
+const {getHomePage, sell, login, register, forgotPassword,about, searchCategory} = require('./routers/home');
 const {searchProducts, addProductPage, addProduct} = require('./routers/search');
 // const {about, aboutTT} = require('./routers/about');
 const aboutRouter = require('./routers/about');
@@ -45,6 +45,7 @@ app.get('/login', login);
 app.get('/register', register);
 app.get('/forgot-password', forgotPassword);
 app.post('/searchProducts', searchProducts);
+app.get('/searchCategory/:category', searchCategory);
 app.get('/addProduct', addProductPage);
 app.post('/addProduct', addProduct);
 app.get('/about', about);

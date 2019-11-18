@@ -35,5 +35,20 @@ module.exports = {
     },
     about: (req, res) => {
                 res.render(pages + '/about');
+    },
+    searchCategory:(req, res)=>{
+        var category = req.params.category;
+        
+        var query = "SELECT * FROM Products WHERE categoryName LIKE '%" + category+ "';"
+        // execute query
+        db.query(query, (err, result) => {
+            if (err) {
+                res.redirect('/');
+            }
+            res.render(pages + '/search2', {
+                title: "Welcome to SFSU | View Proucts",
+                products: result
+            });
+        });
     }
 };
