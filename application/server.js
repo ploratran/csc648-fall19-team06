@@ -6,11 +6,12 @@ const bodyparser = require('body-parser');
 // initialize app:
 const app = express();
 const db = require('./model/database');
-const port = 3000; //port #, can change if there is an issue persisting
+const port = 3001; //port #, can change if there is an issue persisting
 
 // connect to db:
 db.connect((err) => {
     if (err) {
+        console.log(err);
         console.log('Error connecting MySQL Database...');
         return;
     }
