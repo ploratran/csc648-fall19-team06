@@ -7,6 +7,8 @@ const bodyparser = require('body-parser');
 const app = express();
 const db = require('./model/database');
 const port = 3000; //port #, can change if there is an issue persisting
+const pages = path.join(__dirname, '/views/pages');
+
 
 // connect to db:
 db.connect((err) => {
@@ -16,15 +18,16 @@ db.connect((err) => {
     }
     console.log('MySQL Database Connected...');
 })
+
+//Global declare variables
+global.pages = pages;
 global.db = db; //globally declares db
 
-//Manish start
-const {getHomePage, sell, login, register, forgotPassword,about} = require('./routers/home');
+const {getHomePage, sell, login, register, forgotPassword,about, searchCategory} = require('./routers/home');
 const {searchProducts, addProductPage, addProduct} = require('./routers/search');
 // const {about, aboutTT} = require('./routers/about');
 const aboutRouter = require('./routers/about');
 app.use('/', aboutRouter);
-//Manish end
 
 // set view engine as ejs:
 app.set('view engine', 'ejs'); 
@@ -42,19 +45,10 @@ app.get('/login', login);
 app.get('/register', register);
 app.get('/forgot-password', forgotPassword);
 app.post('/searchProducts', searchProducts);
+app.get('/searchCategory/:category', searchCategory);
 app.get('/addProduct', addProductPage);
 app.post('/addProduct', addProduct);
-
 app.get('/about', about);
-// app.get('/aboutTT', aboutTT);
-
-
-// app.use('/', homeRouter);
-// app.use('/', aboutRouter);
-// app.use('/', sellRouter);
-// app.use('/', loginRouter);
-// app.use('/', registerRouter);
-// app.use('/', forgotRouter);
 
 app.use(function(req,res) {
     res.status(400).render(path.join(__dirname, '/views/pages/404'));
