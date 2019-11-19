@@ -38,7 +38,9 @@ div.slideShow{
 body {
     font-family: 'Roboto', sans-serif;
     text-align: center;
+    height: 900px;
 }
+
 
 footer {
     position: absolute;
