@@ -16,7 +16,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav">
-                <form>
+                <!-- <form>
                     <select name='category'>
                         <option value=''>All</option>
                         <option value='books'>Books</option>
@@ -33,10 +33,37 @@
                         placeholder='Search here'
                     >
                     <button>Search</button>
+                </form> -->
+
+                <form class="add-player-form" action="/searchProducts" method="post" enctype="multipart/form-data">
+                    <div class="form-row">
+                        <div class="form-group col-md-3">
+                                    <select id="position" name="categoryName" class="form-control" required>
+                                        <option selected disabled>Choose category</option>
+                                        <option>Books</option>
+                                        <option>Furniture</option>
+                                        <option>Electronics</option>
+                                        <option>Clothing</option>
+                                        <option>Sports</option>
+                                    </select>
+                        </div>
+                        <div class="form-group col-md-6">
+                                <input type="text" class="form-control" name="search" id="search" placeholder="Search Product">
+                        </div>
+                        <div class="form-group col-md-3">
+                                <button type="submit" class="btn btn-primary float-right">Search</button>
+                        </div>
+                        
+                    </div>
+                    <div class="form-row">
+                            
+                    </div>
+                   
                 </form>
             </div>
         </div>
         <div class="navbar-nav ml-auto">
+            <a href="/addProduct" class="nav-item nav-link">AddProduct</a>
             <a href="/sell" class="nav-item nav-link">Sell</a>
             <a href="/login" class="nav-item nav-link">Login</a>
             <a href="/register" class="nav-item nav-link">Register</a>
