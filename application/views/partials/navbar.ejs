@@ -1,10 +1,14 @@
 <!-- Navbar: logo, search bar, login/register, sell -->
-
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <!-- Style HERE -->
 <style>
-    .navbar-nav{
+    .navbar-nav {
         margin: 0px auto;
     }
+
+    
 </style>
 
 <!-- Navigation -->
@@ -15,31 +19,38 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav">
-                <form>
-                    <select name='category'>
-                        <option value=''>All</option>
-                        <option value='books'>Books</option>
-                        <option value='clothes'>Clothes</option>
-                        <option value='furnitures'>Furnitures</option>
-                        <option value='electronics'>Electronics</option>
-                        <option value='sports'>Sports</option>
-                        <option value='events'>Events</option>
-                    </select>
-                    <input 
-                        type='text' 
-                        name='search' 
-                        value='' 
-                        placeholder='Search here'
-                    >
-                    <button>Search</button>
-                </form>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="input-group" id="adv-search">
+                            <div class="dropdown">
+                                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Dropdown button
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" href="#">Action</a>
+                                    <a class="dropdown-item" href="#">Another action</a>
+                                    <a class="dropdown-item" href="#">Something else here</a>
+                                </div>
+                            </div>
+                            <input type="text" class="form-control" placeholder="Search for snippets" />
+                            <div class="input-group-btn">
+                                <div class="btn-group" role="group">
+                                    <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+
         </div>
         <div class="navbar-nav ml-auto">
-            <a href="/sell" class="nav-item nav-link">Sell</a>
+            <a href="/addProduct" class="nav-item nav-link">AddProduct</a>
             <a href="/login" class="nav-item nav-link">Login</a>
             <a href="/register" class="nav-item nav-link">Register</a>
+            <a href="/about" class='nav-item nav-link'>About</a>
         </div>
     </div>
 </nav>

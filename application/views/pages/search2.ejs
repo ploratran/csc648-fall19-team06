@@ -1,0 +1,39 @@
+<!-- import Header includes Navbar, Banner Here!!! -->
+<% include ../partials/header %>
+
+<body>
+    <table class="table table-hovered">
+        <thead class="thead-dark">
+            <tr>
+                <!-- <th scope="col">ID</th> -->
+                <th scope="col">Image</th>
+                <th scope="col">Title</th>
+                <th scope="col">Description</th>
+                <th scope="col">Category</th>
+                <th scope="col">Price</th>
+                <th scope="col">Location</th>
+                <!-- <th scope="col">Action</th> -->
+            </tr>
+        </thead>
+        <tbody>
+            <% products.forEach((product, index) => { %>
+                <tr>
+                    <!-- <th scope="row"><%= product.productId %></th> -->
+                    <td><img src="/assets/img/<%= product.image %>" style="width:200px;height:200px;"  alt=""></td>
+                    <td><%= product.title %></td>
+                    <td><%= product.description %></td>
+                    <td><%= product.categoryName %></td>
+                    <td><%= product.price %></td>
+                    <td><%= product.location %></td>
+                    <!-- <td>
+                        <a href="/editProduct/<%= product.productId %>" target="_blank" rel="noopener" class="btn btn-sm btn-success">Edit</a>
+                        <a href="/deleteProduct/<%= product.productId %>" class="btn btn-sm btn-danger">Delete</a>
+                    </td> -->
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</body>
+
+<!-- import Footer HERE!!! -->
+<% include ../partials/footer %>
