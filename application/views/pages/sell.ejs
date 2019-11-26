@@ -1,91 +1,79 @@
-<!-- import Header includes Navbar, Banner Here!!! -->
 <% include ../partials/header %>
 
-<!-- Start with the Body Here -->
+   <body>
+       <div class="container">
+           <div class="col-6">
+               <div class="card card-register mx-auto mt-5">
+                   <div class="card-header">Seller page</div>
+                   <div class="card-body">
+                       <form>
+                           <div class="form-group col-md-12">
+                               <p class='mandatory-field'>Please enter the title of the product: </p>
+                               <input type="text" class="form-control" name="title" id="title" placeholder="Title of Product" required>
+                           </div>
 
-<body>
-    <div class="container">
-        <div class="card card-register mx-auto mt-5">
-            <div class="card-header">Register an Account</div>
-            <div class="card-body">
-                <form>
-                    <div class="form-group">
-                        <div class="form-col">
-                            <div class="form-group">
+                           <div class="form-group col-md-12">
+                               <p class='mandatory-field'>Please choose the category of the product: </p>
+                               <select id="position" name="categoryName" class="form-control" required>
+                                   <option selected disabled>Choose category</option>
+                                   <option>Books</option>
+                                   <option>Furniture</option>
+                                   <option>Electronics</option>
+                                   <option>Clothing</option>
+                                   <option>Sports</option>
+                                   <option>Events</option>
+                               </select>
+                           </div>
 
+                           <div class="form-group col-md-12">
+                               <p class='mandatory-field'>Description : </p>
+                               <textarea rows="5" cols="65" name="description" placeholder="Enter description here..."></textarea>
+                           </div>
 
-                                <div class="col-md-12">
-                                    <div class="form-label-group">
-                                        <input class="form-control" type="text" id="firstName" placeholder="First name" required="required" autofocus="autofocus">
-                                        <label for="firstName">First name</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <div class="form-label-group">
-                                        <input class="form-control" type="text" id="lastName" placeholder="Last name" required="required">
-                                        <label for="lastName">Last name</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <div class="form-label-group">
+                           <div class="form-group col-md-12">
+                               <p class='mandatory-field'> Price: </p>
+                               <input type="number" class="form-control" name="price" id="price" placeholder="Price" required>
+                           </div>
 
-                                        <input class="form-control" type="email" id="inputEmail" placeholder="Email address" required="required">
-                                        <label for="inputEmail">Email address</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <div class="form-label-group">
-                                        <input class="form-control" type="password" id="inputPassword" placeholder="Password" required="required" maxlength="10">
-                                        <label for="inputPassword">Password</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <div class="form-label-group">
-                                        <input class="form-control" type="password" id="confirmPassword" placeholder="Confirm password" required="required" maxlength="10">
-                                        <label for="confirmPassword">Confirm password</label>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="form-label-group">
-                                        <div class="g-recaptcha" data-sitekey="6LdApK0UAAAAAIxw-iB6-Blb8du4qTaXpqOgFKZ4">
-                                        </div>
-                                    </div>
-                                </div>
-                                   <div class="form-label-group">
-                                    <div class="form-label-group">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-                                            <label class="custom-control-label" for="defaultUnchecked">I agree the following <a href="www.google.com">fake link</a></label>
-                                            
-                                        </div>
-                                    </div>
-                                    </div>
-                                </div>
-                            </div>
-                     
+                           <div class="form-group col-md-12">
+                               <p class='mandatory-field'>Please select your transfer location: </p>
+                               <select id="location" name="location" class="form-control" required>
+                                   <option selected disabled>Choose Location</option>
+                                   <option>Library</option>
+                                   <option>Thornton Hall</option>
+                                   <option>Student Service Building</option>
+                               </select>
+                                  <br>
+                                   <img src="../../public/map.png" width="345" height="223">
+                           </div>
 
-                    </div>
+                           <div class="form-group col-md-12">
+                               <p class='mandatory-field'>Choose File to upload product image:</p>
+                               <div class="input-group mb-3">
+                                   <div class="input-group-prepend">
+                                       <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+                                   </div>
+                                   <div class="custom-file">
+                                       <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                                       <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                                   </div>
+                               </div>
+                           </div>
+                           <p style='text-align: center; color: red'>Please allow up to 24 hours for your listing to get listed.</p>
+                           <div class="form-group ">
+                               <div class="col-md-10">
+                                   <button type="button" class="btn btn-secondary btn-md" type="reset">reset </button>
+                               </div>
+                               <div class="col-md-2">
+                                   <button type="button" class="btn btn-primary btn-md" type="submit">submit</button>
+                               </div>
+                           </div>
+                        
+                       </form>
 
-                    <a class="btn btn-primary btn-block" href="/">Register</a>
-                </form>
-                <div class="text-center">
-                    <a class="d-block small mt-3" href="login">Login Page</a>
-                    <a class="d-block small" href="forgot-password">Forgot Password?</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script src='https://www.google.com/recaptcha/api.js'></script>
-
-    <!-- DO NOT PUT </body> TAG HERE!!! -->
-
-    <!-- import Footer HERE!!! -->
-    <% include ../partials/footer %>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </body>
+   <% include ../partials/footer %>
