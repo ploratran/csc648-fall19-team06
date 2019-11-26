@@ -1,80 +1,68 @@
-   <% include ../partials/header %>
+<% include ../partials/header %>
+<body>
+    <div class="container">
+        <div class="card card-register mx-auto mt-5">
+            <div class="card-header">Seller page</div>
+            <div class="card-body">
+                <form>
+                    <div class="form-group">
+                        Please choose your product categories:
+                        <select name="dropdown">
+                            <option value="/">Accessories</option>
+                            <option value="/">Books</option>
+                            <option value="/">Electronics</option>
+                            <option value="/">Furniture</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        Description : <br />
+                        <textarea rows="5" cols="50" name="description">Enter description here...</textarea>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-col">
+                            <div class="col-sm-6">
+                                <div class="form-label-group">
+                                    Price : <input type="number" name="" />
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-label-group">
+                                    Title of your procuct: <input type="text" name="" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <p>Please select your transfer location: </p>
+                        <select name="dropdown">
+                            <option value="" selected>Library</option>
+                            <option value="">xx Hall</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <p>Choose File to upload product image:</p>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+                            </div>
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                                <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <a class="btn btn-primary btn-block" href="login.html">Submit</a>
+                        <input class="btn btn-secondary btn-block" type="reset" name="reset" value="Reset" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-   <body>
-       <div class="container">
-
-           <div class="col-6">
-               <div class="card card-register mx-auto mt-5">
-                   <div class="card-header">Seller page</div>
-                   <div class="card-body">
-                       <form>
-                           <div class="form-group col-md-12">
-                               <p>Please enter the title of the product: </p>
-                               <input type="text" class="form-control" name="title" id="title" placeholder="Title of Product" required>
-                           </div>
-
-                           <div class="form-group col-md-12">
-                               <p>Please choose the category of the product: </p>
-                               <select id="position" name="categoryName" class="form-control" required>
-                                   <option selected disabled>Choose category</option>
-                                   <option>Books</option>
-                                   <option>Furniture</option>
-                                   <option>Electronics</option>
-                                   <option>Clothing</option>
-                                   <option>Sports</option>
-                                   <option>Events</option>
-                               </select>
-                           </div>
-
-                           <div class="form-group col-md-12">
-                               <p>Description : </p>
-                               <textarea rows="5" cols="65" name="description" placeholder="Enter description here..."></textarea>
-                           </div>
-
-                           <div class="form-group col-md-12">
-                               <p> Price: </p>
-                               <input type="number" class="form-control" name="price" id="price" placeholder="Price" required>
-                           </div>
-
-                           <div class="form-group col-md-12">
-                               <p>Please select your transfer location: </p>
-                               <select id="location" name="location" class="form-control" required>
-                                   <option selected disabled>Choose Location</option>
-                                   <option>Library</option>
-                                   <option>Thornton Hall</option>
-                                   <option>Student Service Building</option>
-                               </select>
-                                  <br>
-                                   <img src="../../public/map.png" width="345" height="223">
-                           </div>
-
-                           <div class="form-group col-md-12">
-                               <p>Choose File to upload product image:</p>
-                               <div class="input-group mb-3">
-                                   <div class="input-group-prepend">
-                                       <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
-                                   </div>
-                                   <div class="custom-file">
-                                       <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
-                                       <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
-                                   </div>
-                               </div>
-                           </div>
-
-                           <div class="form-group ">
-                               <div class="col-md-10">
-                                   <button type="button" class="btn btn-secondary btn-md" type="reset">reset </button>
-                               </div>
-                               <div class="col-md-2">
-                                   <button type="button" class="btn btn-primary btn-md" type="submit">submit</button>
-                               </div>
-                           </div>
-
-                       </form>
-
-                   </div>
-               </div>
-           </div>
-       </div>
-   </body>
-   <% include ../partials/footer %>
+<% include ../partials/footer %>
