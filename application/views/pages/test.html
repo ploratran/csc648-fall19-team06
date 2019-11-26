@@ -2,102 +2,135 @@
 <html>
 <head>
 <style>
-.product-filter {
+html, body {
+ height: 100%;
+ width: 100%;
+ margin: 0;
+ font-family: 'Roboto', sans-serif;
+}
+.container {
+ max-width: 1200px;
+ margin: 0 auto;
+ padding: 15px;
  display: flex;
 }
-.product-filter h1 {
- flex-grow: 1;
+/* Columns */
+.left-column {
+ width: 65%;
+ position: relative;
 }
-.sort {
- display: flex;
+.right-column {
+ width: 35%;
+ margin-top: 60px;
 }
-.collection-sort {
- display: flex;
- flex-direction: column;
+/* Left Column */
+.left-column img {
+ width: 100%;
+ position: absolute;
+ left: 0;
+ top: 0;
+ transition: all 0.3s ease;
 }
-.products {
- display: flex;
- flex-wrap: wrap;
+.left-column img.active {
+ opacity: 1;
 }
-.product-card {
- padding: 2%;
- flex-grow: 1;
- flex-basis: 16%;
+/* Product Description */
+.product-description {
+ border-bottom: 1px solid #E1E8EE;
+ margin-bottom: 20px;
 }
-.product-card {
- flex: 1 16%;
+.product-description span {
+ font-size: 12px;
+ color: #358ED7;
+ letter-spacing: 1px;
+ text-transform: uppercase;
+ text-decoration: none;
 }
-.product-image img {
- max-width: 100%;
- max-width: 200px
+.product-description h1 {
+ font-weight: 300;
+ font-size: 52px;
+ color: #43484D;
+ letter-spacing: -2px;
 }
-.product-info {
- margin-top: auto;
+.product-description p {
+ font-size: 16px;
+ font-weight: 300;
+ color: #86939E;
+ line-height: 24px;
+}
+/* Responsive */
+@media (max-width: 940px) {
+ .container {
+   flex-direction: column;
+   margin-top: 60px;
+ }
+ .left-column,
+ .right-column {
+   width: 100%;
+ }
+ .left-column img {
+   width: 300px;
+   right: 0;
+   top: -65px;
+   left: initial;
+ }
+}
+@media (max-width: 535px) {
+ .left-column img {
+   width: 220px;
+   top: -85px;
+ }
 }
 </style>
 </head>
 <body>
-<nav class="product-filter">
- <h1>Electronic</h1>
- <div class="sort">
-   <div class="collection-sort">
-     <label>Filter by:</label>
-     <select>
-       <option value="/">Phone</option>
-       <option value="/">Labtop</option>
-       <option value="/">TV</option>
-       <option value="/">Others</option>
-     </select>
-   </div>
-   <div class="collection-sort">
-     <label>Sort by:</label>
-     <select>
-       <option value="/">Featured</option>
-       <option value="/">Price: low to high</option>
-       <option value="/">Price: high to low</option>
-     </select>
-   </div>
- </div>
-</nav>
-<section class="products">
- <!-- It's likely you'll need to link the card somewhere. You could add a button in the info, link the titles, or even wrap the entire card in an <a href="..."> -->
- <div class="product-card">
-   <div class="product-image">
-     <img src=""width="200" height="200">
-   </div>
-   <div class="product-info">
-     <h5>product title</h5>
-     <h6>product price</h6>
-   </div>
- </div>
- <div class="product-card">
-     <div class="product-image">
-       <img src=""width="200" height="200">
-     </div>
-     <div class="product-info">
-       <h5>product title</h5>
-       <h6>product price</h6>
-     </div>
-   </div>
-   <div class="product-card">
-        <div class="product-image">
-          <img src=""width="200" height="200">
-        </div>
-        <div class="product-info">
-          <h5>product title</h5>
-          <h6>product price</h6>
-        </div>
+    <main class="container">
+        <!-- Left Column / Headphones Image -->
+        <div class="left-column">
+        <img class="mySlides" src="https://static.coindesk.com/wp-content/uploads/2014/01/apple-bitcoin.jpeg	https://static.coindesk.com/wp-content/uploads/2014/01/apple-bitcoin.jpeg
+">
+        <img class="mySlides" src="https://clipart.info/images/ccovers/15036889136-2-apple-fruit-free-png-image.png	https://clipart.info/images/ccovers/15036889136-2-apple-fruit-free-png-image.png
+">
+        <img class="mySlides" src="http://bluecure.org/wp-content/uploads/2016/03/apples-prostate-cancer-curing-foods.jpg	http://bluecure.org/wp-content/uploads/2016/03/apples-prostate-cancer-curing-foods.jpg
+">
+        <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+        <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
       </div>
-     <div class="product-card">
-           <div class="product-image">
-             <img src=""width="200" height="200">
-           </div>
-           <div class="product-info">
-             <h5>product title</h5>
-             <h6>product price</h6>
-           </div>
-         </div>
- <!-- more products -->
-</section>
+      <script>
+      var slideIndex = 1;
+      showDivs(slideIndex);
+      function plusDivs(n) {
+        showDivs(slideIndex += n);
+      }
+      function showDivs(n) {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        if (n > x.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = x.length}
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+        }
+        x[slideIndex-1].style.display = "block";
+      }
+      </script>
+        <!-- Right Column(product info) -->
+        <div class="right-column">
+          <!-- Product Description -->
+          <div class="product-description">
+            <span>Electronics</span>
+            <h1>Macbook Pro 2019 256GB</h1>
+            <p>Condition: Like New</p>
+          </div>
+              <a href="#">Contact seller</a>
+          <!-- Product Pricing -->
+          <div class="product-price">
+            $<span>1,5000 USD</span>
+            <a href="#" class="cart-btn">
+            Buy</a>
+          </div>
+        </div>
+    </main>
+
 </body>
 </html>
+
