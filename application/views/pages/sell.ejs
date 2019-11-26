@@ -5,7 +5,7 @@
             <div class="card-header">Sell</div>
             <div class="card-body">
                 <form>
-                    <div class="form-group">
+                    <div class="form-group mandatory-field">
                         Please choose your product categories:
                         <select name="dropdown">
                             <option selected disabled>Choose category</option>
@@ -17,17 +17,17 @@
                             <option value='events'>Events</option>   
                         </select>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group mandatory-field">
                         Description : <br />
-                        <textarea rows="5" cols="50" name="description">Enter description here...</textarea>
+                        <textarea rows="5" cols="50" name="description" placeholder="Enter description here..."></textarea>
                         <div class="form-row">
                             <div class="col-sm-6">
-                                <div class="form-label-group">
+                                <div class="form-label-group mandatory-field">
                                     Price : <br><input type="number" name="" />
                                 </div>
                             </div>
                             <div class="col-sm-6">
-                                <div class="form-label-group">
+                                <div class="form-label-group mandatory-field">
                                     Title of your procuct: <input type="text" name="" />
                                 </div>
                             </div>
@@ -35,14 +35,15 @@
                     </div>
 
                     <div class="form-group">
-                        <p>Please select your transfer location: </p>
+                        <p class='mandatory-field'>Please select your transfer location: </p>
                         <select name="dropdown">
-                            <option value="" selected>Library</option>
-                            <option value="">xx Hall</option>
+                            <option value="library" selected>Library</option>
+                            <option value="hensil-hall">Hensil Hall</option>
+                            <option value="thorton-hall">Thorton Hall</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <p>Choose File to upload product image:</p>
+                        <p class='mandatory-field'>Choose File to upload product image:</p>
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
@@ -53,8 +54,9 @@
                             </div>
                         </div>
                     </div>
+                    <p style="text-align: center">Please allow 24 hours for your listing to get uploaded.</p>
                     <div class="form-group">
-                        <a class="btn btn-primary btn-block" href="login.html">Submit</a>
+                        <a class="btn btn-primary btn-block" href="/">Submit</a>
                         <input class="btn btn-secondary btn-block" type="reset" name="reset" value="Reset" />
                     </div>
                 </form>
