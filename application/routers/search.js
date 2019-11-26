@@ -1,6 +1,6 @@
 
 module.exports = {
-searchProducts: (req, res) => {
+    searchProducts: (req, res) => {
         searchString = req.body.search;
         categoryString = req.body.categoryName;
 

@@ -16,56 +16,35 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav">
-                <!-- <form>
-                    <select name='category'>
-                        <option value=''>All</option>
-                        <option value='books'>Books</option>
-                        <option value='clothes'>Clothes</option>
-                        <option value='furnitures'>Furnitures</option>
-                        <option value='electronics'>Electronics</option>
-                        <option value='sports'>Sports</option>
-                        <option value='events'>Events</option>
-                    </select>
-                    <input 
-                        style="height:23px"
-                        type='text' 
-                        name='search' 
-                        value='' 
-                        placeholder='Search here'
-                    >
-                    <button>Search</button>
-                </form> -->
-
                 <form class="add-player-form" action="/searchProducts" method="post" enctype="multipart/form-data">
                     <div class="form-row">
                         <div class="form-group col-md-3">
-                                    <select id="position" name="categoryName" class="form-control" required>
-                                        <option selected disabled>Choose category</option>
-                                        <option>Books</option>
-                                        <option>Furniture</option>
-                                        <option>Electronics</option>
-                                        <option>Clothing</option>
-                                        <option>Sports</option>
-                                        <option>Events</option>                                        
-                                    </select>
+                            <select id="position" name="categoryName" class="form-control" required>
+                                <!-- Note: If it's selected disabled, how to search for All Category? -->
+                                <option selected disabled>Choose category</option>
+                                <option>All</option>
+                                <option value='books'>Books</option>
+                                <option value='clothes'>Clothes</option>
+                                <option value='furnitures'>Furnitures</option>
+                                <option value='electronics'>Electronics</option>
+                                <option value='sports'>Sports</option>
+                                <option value='events'>Events</option>                                    
+                            </select>
                         </div>
                         <div class="form-group col-md-6">
-                                <input type="text" class="form-control" name="search" id="search" placeholder="Search Product">
+                            <input type="text" class="form-control" name="search" id="search" placeholder="Search Product">
                         </div>
                         <div class="form-group col-md-3">
-                                <button type="submit" class="btn btn-primary float-right">Search</button>
+                            <button type="submit" class="btn btn-primary float-right">Search</button>
                         </div>
-                        
                     </div>
                     <div class="form-row">
-                            
                     </div>
-                   
                 </form>
             </div>
         </div>
         <div class="navbar-nav ml-auto">
-            <a href="/addProduct" class="nav-item nav-link">AddProduct</a>
+            <a href="/sell" class="nav-item nav-link">Sell</a>
             <a href="/login" class="nav-item nav-link">Login</a>
             <a href="/register" class="nav-item nav-link">Register</a>
         </div>
