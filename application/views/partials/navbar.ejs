@@ -37,9 +37,10 @@
 
                 <form class="add-player-form" action="/searchProducts" method="post" enctype="multipart/form-data">
                     <div class="form-row">
-                        <div class="form-group col-md-3">
+                     
+                        <div class="form-group col-md-5">
                                     <select id="position" name="categoryName" class="form-control" required>
-                                        <option selected disabled>Choose category</option>
+                                        <option selected disabled>Category</option>
                                         <option>Books</option>
                                         <option>Furniture</option>
                                         <option>Electronics</option>
@@ -48,22 +49,20 @@
                                         <option>Events</option>                                        
                                     </select>
                         </div>
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-5">
                                 <input type="text" class="form-control" name="search" id="search" placeholder="Search Product">
                         </div>
-                        <div class="form-group col-md-3">
+                        <div class="form-group col-md-2">
                                 <button type="submit" class="btn btn-primary float-right">Search</button>
                         </div>
                         
                     </div>
-                    <div class="form-row">
-                            
-                    </div>
-                   
+
                 </form>
             </div>
         </div>
         <div class="navbar-nav ml-auto">
+           <a href = "/about" class="nav-item nav-link">About</a>
             <a href="/addProduct" class="nav-item nav-link">AddProduct</a>
             <a href="/login" class="nav-item nav-link">Login</a>
             <a href="/register" class="nav-item nav-link">Register</a>
