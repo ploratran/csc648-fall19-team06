@@ -1,0 +1,72 @@
+<!-- Navbar: logo, search bar, login/register, sell -->
+
+<!-- Style HERE -->
+<style>
+    .navbar-nav{
+        margin: 0px auto;
+    }
+</style>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-3">
+    <div class="container-fluid">
+        <a href='/'><img alt='logo' src='/csc648-logo.svg' width='50' height='50'></a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav">
+                <!-- <form>
+                    <select name='category'>
+                        <option value=''>All</option>
+                        <option value='books'>Books</option>
+                        <option value='clothes'>Clothes</option>
+                        <option value='furnitures'>Furnitures</option>
+                        <option value='electronics'>Electronics</option>
+                        <option value='sports'>Sports</option>
+                        <option value='events'>Events</option>
+                    </select>
+                    <input 
+                        type='text' 
+                        name='search' 
+                        value='' 
+                        placeholder='Search here'
+                    >
+                    <button>Search</button>
+                </form> -->
+
+                <form class="add-player-form" action="/searchProducts" method="post" enctype="multipart/form-data">
+                    <div class="form-row">
+                        <div class="form-group col-md-3">
+                                    <select id="position" name="categoryName" class="form-control" required>
+                                        <option selected disabled>Choose category</option>
+                                        <option>Books</option>
+                                        <option>Furniture</option>
+                                        <option>Electronics</option>
+                                        <option>Clothing</option>
+                                        <option>Sports</option>
+                                        <option>Events</option>                                        
+                                    </select>
+                        </div>
+                        <div class="form-group col-md-6">
+                                <input type="text" class="form-control" name="search" id="search" placeholder="Search Product">
+                        </div>
+                        <div class="form-group col-md-3">
+                                <button type="submit" class="btn btn-primary float-right">Search</button>
+                        </div>
+                        
+                    </div>
+                    <div class="form-row">
+                            
+                    </div>
+                   
+                </form>
+            </div>
+        </div>
+        <div class="navbar-nav ml-auto">
+            <a href="/addProduct" class="nav-item nav-link">AddProduct</a>
+            <a href="/login" class="nav-item nav-link">Login</a>
+            <a href="/register" class="nav-item nav-link">Register</a>
+        </div>
+    </div>
+</nav>

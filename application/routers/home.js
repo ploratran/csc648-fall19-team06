@@ -1,16 +1,54 @@
-const express = require('express');
-const path = require('path');
-
-const router = express.Router();
-
-const pages = path.join(__dirname, '../views/pages');
-
-router.get('/', function(req, res) {
-    res.render(pages + '/home'); //render home.ejs + sends default home page
-});
-
-router.get('/about', function(req, res) {
-    res.render(pages + '/about'); //render about.ejs
-});
-
-module.exports = router;
+module.exports = {
+    //Home page
+    getHomePage: (req, res) => {
+            let query = "SELECT * FROM `Category`"; // query database to get all the categories
+            db.query(query, (err, result) => {
+                if (err) {
+                    res.redirect('/');
+                }
+                res.render(pages + '/home', {
+                    title: "Welcome to SFSU | View Proucts",
+                    categories: result
+                });
+                // console.log("Categories", result);
+            });
+    },
+    sell: (req, res) => {
+                res.render(pages + '/sell', {
+                    title: "Welcome to SFSU | View Proucts"
+                });
+    },
+    login: (req, res) => {
+                res.render(pages + '/login', {
+                    title: "Welcome to SFSU | View Proucts"
+                });
+    },
+    register: (req, res) => {
+                res.render(pages + '/register', {
+                    title: "Welcome to SFSU | View Proucts"
+                });
+    },
+    forgotPassword: (req, res) => {
+                res.render(pages + '/forgot-password', {
+                    title: "Welcome to SFSU | View Proucts"
+                });
+    },
+    about: (req, res) => {
+                res.render(pages + '/about');
+    },
+    searchCategory:(req, res)=>{
+        var category = req.params.category;
+        
+        var query = "SELECT * FROM Products WHERE categoryName LIKE '%" + category+ "';"
+        // execute query
+        db.query(query, (err, result) => {
+            if (err) {
+                res.redirect('/');
+            }
+            res.render(pages + '/search2', {
+                title: "Welcome to SFSU | View Proucts",
+                products: result
+            });
+        });
+    }
+};

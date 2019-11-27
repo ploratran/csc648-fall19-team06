@@ -1,0 +1,111 @@
+<!-- import Header includes Navbar, Banner Here!!! -->
+<% include ../partials/header %>
+
+<!-- Start with the Body Here -->
+                
+<body>
+
+        <button class="tablink" onclick="openPage('Brought', this, 'green')">Brought Products</button>
+        <button class="tablink" onclick="openPage('Selling', this, 'green')" id="defaultOpen">Selling Products</button>
+        <button class="tablink" onclick="openPage('Sold', this, 'green')">Sold Products</button>
+        <button class="tablink" onclick="openPage('Contact', this, 'green')">Message Box</button>
+        
+        
+        <div id="Brought" class="tabcontent">
+         
+            <h3>History for proudct brought</h3>
+         
+                 <table style="width:100%">
+          
+                      <tr>
+                        <td><img src=""width="50" height="50"></td>
+                        <th><h5>product title</h5></th>
+                        <th><h5>product price</h5></th>
+                        <th><h5>product brought date</h5></th>
+                      </tr>
+        
+                  </table>
+        </div>
+        
+        
+        <div id="Selling" class="tabcontent">
+        
+            <h3>Current user selling product</h3>
+         
+                 <table style="width:100%">
+          
+                      <tr>
+                        <td><img src=""width="50" height="50"></td>
+                        <th><h5>product title</h5></th>
+                        <th><h5>product price</h5></th>
+                            <th><h5>product brought date</h5></th>
+                      </tr>
+        
+                  </table>
+        </div>
+        
+        
+        <div id="Sold" class="tabcontent">
+        
+            <h3>History for proudct sold</h3>
+        
+                 <table style="width:100%">
+          
+                      <tr>
+                        <td><img src=""width="50" height="50"></td>
+                        <th><h5>product title</h5></th>
+                        <th><h5>product price</h5></th>
+                        <th><h5>product brought date</h5></th>
+                      </tr>
+        
+                  </table>
+        
+        </div>
+        
+        <div id="Contact" class="tabcontent">
+          <h3>rows with only title and date and when you click that row it expanse and you can see the message and there’s a reply box under it</h3>
+          
+          <button class="accordion">
+          Product Title and date
+        </button>
+        <div class="panel">
+        <p>should be chat content for both user and type content box with send button next to it</p>
+        <textarea rows="5" cols="100" name="description"> </textarea><br>
+        <a class="btn btn-primary btn-block" href="">Send</a>
+        </div>
+          
+        </div>
+        
+        <script>
+        function openPage(pageName,elmnt,color) {
+          var i, tabcontent, tablinks;
+          tabcontent = document.getElementsByClassName("tabcontent");
+          for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+          }
+          tablinks = document.getElementsByClassName("tablink");
+          for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].style.backgroundColor = "";
+          }
+          document.getElementById(pageName).style.display = "block";
+          elmnt.style.backgroundColor = color;
+        }
+        
+        // Get the element with id="defaultOpen" and click on it
+        document.getElementById("defaultOpen").click();
+        
+        var accordions = document.querySelectorAll("button.accordion");
+        
+        for (var i = 0; i < accordions.length; i++) {
+          accordions[i].onclick = function() {
+            this.classList.toggle("active");
+            this.nextElementSibling.classList.toggle("show");
+          };
+        }
+        
+        </script>
+
+<!-- DO NOT PUT </body> TAG HERE!!! -->
+
+<!-- import Footer HERE!!! -->
+<% include ../partials/footer %>

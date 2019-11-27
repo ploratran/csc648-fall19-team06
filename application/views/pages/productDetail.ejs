@@ -1,0 +1,64 @@
+<!-- import Header includes Navbar, Banner Here!!! -->
+<% include ../partials/header %>
+
+<!-- Start with the Body Here -->
+<body>
+        <main class="container">
+ 
+                <!-- Left Column / Headphones Image -->
+                <div class="left-column">
+                <img class="mySlides" src="https://static.coindesk.com/wp-content/uploads/2014/01/apple-bitcoin.jpeg">
+                <img class="mySlides" src="https://clipart.info/images/ccovers/15036889136-2-apple-fruit-free-png-image.png">
+                <img class="mySlides" src="http://bluecure.org/wp-content/uploads/2016/03/apples-prostate-cancer-curing-foods.jpg">
+              
+                <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+                <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+              </div>
+              
+              <script>
+              var slideIndex = 1;
+              showDivs(slideIndex);
+              
+              function plusDivs(n) {
+                showDivs(slideIndex += n);
+              }
+              
+              function showDivs(n) {
+                var i;
+                var x = document.getElementsByClassName("mySlides");
+                if (n > x.length) {slideIndex = 1}
+                if (n < 1) {slideIndex = x.length}
+                for (i = 0; i < x.length; i++) {
+                  x[i].style.display = "none";  
+                }
+                x[slideIndex-1].style.display = "block";  
+              }
+              </script>
+               
+               
+                <!-- Right Column(product info) -->
+                <div class="right-column">
+               
+                  <!-- Product Description -->
+                  <div class="product-description">
+                    <span>Product category</span>
+                    <h1>Product title</h1>
+                    <p>Product description</p>
+                  </div>
+                  
+                      <a href="#">Contact seller</a>
+              
+                  <!-- Product Pricing -->
+                  <div class="product-price">
+                    $<span>Product Price</span>
+                    <a href="#" class="cart-btn">
+                    Buy</a>
+                  </div>
+                </div>
+            </main>
+              
+
+<!-- DO NOT PUT </body> TAG HERE!!! -->
+
+<!-- import Footer HERE!!! -->
+<% include ../partials/footer %>
