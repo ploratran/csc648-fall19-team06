@@ -17,15 +17,14 @@ db.connect((err) => {
         return;
     }
     console.log('MySQL Database Connected...');
-})
+});
 
 //Global declare variables
 global.pages = pages;
 global.db = db; //globally declares db
 
-const {getHomePage, sell, login, register, forgotPassword,about, searchCategory} = require('./routers/home');
+const {getHomePage, sell, login, register, about, listing, items, searchCategory} = require('./routers/home');
 const {searchProducts, addProductPage, addProduct} = require('./routers/search');
-// const {about, aboutTT} = require('./routers/about');
 const aboutRouter = require('./routers/about');
 app.use('/', aboutRouter);
 
@@ -38,20 +37,20 @@ app.use(bodyparser.json());
 app.use(fileUpload()); // configure fileupload
 app.use(express.static(__dirname + '/public')); //serve static files in public folder
 
-
 app.get('/', getHomePage);
 app.get('/sell', sell);
 app.get('/login', login);
 app.get('/register', register);
-app.get('/forgot-password', forgotPassword);
 app.post('/searchProducts', searchProducts);
 app.get('/searchCategory/:category', searchCategory);
 app.get('/addProduct', addProductPage);
 app.post('/addProduct', addProduct);
 app.get('/about', about);
+app.get('/listing', listing);
+app.get('/items', items);
 
-app.use(function(req,res) {
-    res.status(400).render(path.join(__dirname, '/views/pages/404'));
+app.use((req,res) => {
+    res.status(404).render(path.join(__dirname, '/views/pages/404'));
 });
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
