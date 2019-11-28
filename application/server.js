@@ -8,6 +8,7 @@ const app = express();
 const db = require('./model/database');
 const port = 3000; //port #, can change if there is an issue persisting
 const pages = path.join(__dirname, '/views/pages');
+const listing = require('./routers/listing');
 
 
 // connect to db:
@@ -43,12 +44,12 @@ app.get('/', getHomePage);
 app.get('/sell', sell);
 app.get('/login', login);
 app.get('/register', register);
-app.get('/forgot-password', forgotPassword);
 app.post('/searchProducts', searchProducts);
 app.get('/searchCategory/:category', searchCategory);
 app.get('/addProduct', addProductPage);
 app.post('/addProduct', addProduct);
 app.get('/about', about);
+app.get('listing', listing);
 
 app.use(function(req,res) {
     res.status(400).render(path.join(__dirname, '/views/pages/404'));
