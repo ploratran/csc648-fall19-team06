@@ -7,8 +7,8 @@
 /* 404 Styling */
 * {
     -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-  }
+    box-sizing: border-box;
+}
   
 body {
     padding: 0;
@@ -17,7 +17,7 @@ body {
 
 #notfound {
     position: relative;
-    height: 100vh;
+    height: 700px;
 }
 
 #notfound .notfound {
