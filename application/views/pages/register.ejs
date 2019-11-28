@@ -1,8 +1,10 @@
 <!-- import Header includes Navbar, Banner Here!!! -->
 <% include ../partials/header %>
 
-<!-- Start with the Body Here -->
+<!-- include legalModal HERE!! -->
+<% include ../partials/legalModal %>
 
+<!-- Start with the Body Here -->
 <body>
     <div class="container">
         <div class="card card-register mx-auto mt-5">
@@ -61,26 +63,26 @@
                                     <div class="form-label-group">
                                         <div class="custom-control custom-checkbox">
                                             <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
-                                            <label class="custom-control-label" for="defaultUnchecked">I agree the following <a href='#'>terms & conditions</a></label>
+                                            <label class="custom-control-label" for="defaultUnchecked">I agree the following <a href='#' data-toggle='modal' data-target='#myLegal'>terms & conditions</a></label>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    
                 </form>
                 <div class="text-center">
                     <a class="d-block small mt-3" href="login">Login Page</a>
-                    <a class="d-block small" href="forgot-password">Forgot Password?</a>
+                    <a class="d-block small" href="#" data-toggle="modal" data-target="#forgotPassword">Forgot Password?</a>
                 </div>
             </div>
         </div>
     </div>
     <script src='https://www.google.com/recaptcha/api.js'></script>
     
-
-    <!-- DO NOT PUT </body> TAG HERE!!! -->
-
-    <!-- import Footer HERE!!! -->
-    <% include ../partials/footer %>
+    <!-- include forgotPasswordModal HERE!! -->
+    <%- include ../partials/forgotPasswordModal %>
+    
+<!-- DO NOT PUT </body> TAG HERE!!! -->
+<!-- import Footer HERE!!! -->
+<% include ../partials/footer %>
