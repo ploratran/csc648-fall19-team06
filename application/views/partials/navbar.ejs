@@ -1,59 +1,39 @@
 <!-- Navbar: logo, search bar, login/register, sell -->
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<!-- Style HERE -->
-<style>
-    .navbar-nav {
-        margin: 0px auto;
-    }
-</style>
 
-<!-- Navigation -->
-<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-3">
-    <div class="container-fluid">
-        <a href='/'><img alt='logo' src='/csc648-logo.svg' width='50' height='50'></a>
-        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8">
-                        <div class="input-group" id="adv-search">
-                            <div class="dropdown">
-                                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Choose Categories
-                                </button>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item" href="/">All</a>
-                                    <a class="dropdown-item" href="/books">Books</a>
-                                    <a class="dropdown-item" href="/clothes">Clothes</a>
-                                    <a class="dropdown-item" href="/furnitures">Furnitures</a>
-                                    <a class="dropdown-item" href="/electronics">Electronics</a>
-                                    <a class="dropdown-item" href="/sports">Sport Gears</a>
-                                    <a class="dropdown-item" href="/events">Event Tickets</a>
-
-                                </div>
-                            </div>
-                            <input type="text" class="form-control" placeholder="Search for snippets" />
-                            <div class="input-group-btn">
-                                <div class="btn-group" role="group">
-                                    <button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+<nav class="navbar navbar-expand-md navbar-dark bg-dark" id='main-nav'>
+    <!-- Logo HOME btn -->
+    <a href='/' class='navbar-brand'>
+        <img alt='logo' src='/csc648-logo.svg' width='50' height='50'>
+    </a>
+        
+    <!-- navbar collapse toggle btn -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+        
+    <!-- navbar items -->
+    <div class='collapse navbar-collapse' id='navbarCollapse'>
+        <!-- make search bar long -->
+        <div class='d-none d-lg-inline w-100 pt-1 pt-3'>
+            <%- include ./searchbar %>
         </div>
-        <div class="navbar-nav ml-auto">
-            <a href="/about" class="nav-item nav-link">About</a>
-            <a href="/sell" class="nav-item nav-link">Sell</a>
-            <a href="/login" class="nav-item nav-link">Login</a>
-            <a href="/register" class="nav-item nav-link">Register</a>
-        </div>
+        
+        <ul class='navbar-nav ml-auto'>
+            <li class='nav-item'>
+                <a class='nav-link' href='/about' style='color: white'>About</a>
+            </li>
+        
+            <li class='nav-item'>
+                <a class='nav-link' href='/sell' style='color: white'>Sell</a>
+            </li>
+        
+            <li class='nav-item'>
+                <a class='nav-link' href='/login' style='color: white'>Login</a>
+            </li>
+        
+            <li class='nav-item'>
+                <a class='nav-link' href='/register' style='color: white'>Register</a>
+            </li>
+        </ul>
     </div>
 </nav>
