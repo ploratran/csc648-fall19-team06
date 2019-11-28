@@ -36,7 +36,7 @@ app.set('views', path.join(__dirname, 'views')); //serve files in views folder
 // all middlewares: 
 app.use(bodyparser.json());
 app.use(fileUpload()); // configure fileupload
-app.use(express.static('public')); //serve public static files
+app.use(express.static(__dirname + '/public')); //serve public static files
 
 
 app.get('/', getHomePage);

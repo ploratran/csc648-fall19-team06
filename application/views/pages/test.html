@@ -1,103 +1,68 @@
-<!DOCTYPE html>
-<html>
-<head>
-<style>
-.product-filter {
- display: flex;
-}
-.product-filter h1 {
- flex-grow: 1;
-}
-.sort {
- display: flex;
-}
-.collection-sort {
- display: flex;
- flex-direction: column;
-}
-.products {
- display: flex;
- flex-wrap: wrap;
-}
-.product-card {
- padding: 2%;
- flex-grow: 1;
- flex-basis: 16%;
-}
-.product-card {
- flex: 1 16%;
-}
-.product-image img {
- max-width: 100%;
- max-width: 200px
-}
-.product-info {
- margin-top: auto;
-}
-</style>
-</head>
-<body>
-<nav class="product-filter">
- <h1>Electronic</h1>
- <div class="sort">
-   <div class="collection-sort">
-     <label>Filter by:</label>
-     <select>
-       <option value="/">Phone</option>
-       <option value="/">Labtop</option>
-       <option value="/">TV</option>
-       <option value="/">Others</option>
-     </select>
-   </div>
-   <div class="collection-sort">
-     <label>Sort by:</label>
-     <select>
-       <option value="/">Featured</option>
-       <option value="/">Price: low to high</option>
-       <option value="/">Price: high to low</option>
-     </select>
-   </div>
- </div>
-</nav>
-<section class="products">
- <!-- It's likely you'll need to link the card somewhere. You could add a button in the info, link the titles, or even wrap the entire card in an <a href="..."> -->
- <div class="product-card">
-   <div class="product-image">
-     <img src=""width="200" height="200">
-   </div>
-   <div class="product-info">
-     <h5>product title</h5>
-     <h6>product price</h6>
-   </div>
- </div>
- <div class="product-card">
-     <div class="product-image">
-       <img src=""width="200" height="200">
-     </div>
-     <div class="product-info">
-       <h5>product title</h5>
-       <h6>product price</h6>
-     </div>
-   </div>
-   <div class="product-card">
-        <div class="product-image">
-          <img src=""width="200" height="200">
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link type='text/css' rel='stylesheet' href='../../public/css/sticky-footer.css'>
+    
+    <title>Sticky Footer</title>
+    
+  </head>
+
+  <body>
+    
+    <header>
+    <h2>SFSU TEAM 06</h2>
+      <!-- Fixed navbar -->
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="#">Fixed navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#">Disabled</a>
+            </li>
+          </ul>
+          <form class="form-inline mt-2 mt-md-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
         </div>
-        <div class="product-info">
-          <h5>product title</h5>
-          <h6>product price</h6>
-        </div>
+      </nav>
+    </header>
+
+    <!-- Begin page content -->
+    <main role="main" class="container">
+      <h1 class="mt-5">Sticky footer with fixed navbar</h1>
+      <p class="lead">Pin a fixed-height footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS. A fixed navbar has been added with <code>padding-top: 60px;</code> on the <code>body &gt; .container</code>.</p>
+      <p>Back to <a href="https://glitch.com/~bootstrap-4-example-sticky-footer">the default sticky footer</a> minus the navbar.</p>
+    </main>
+
+    <footer class="footer bg-dark">
+      <div class="container">
+        <span class="text-muted">Place sticky footer content here.</span>
       </div>
-     <div class="product-card">
-           <div class="product-image">
-             <img src=""width="200" height="200">
-           </div>
-           <div class="product-info">
-             <h5>product title</h5>
-             <h6>product price</h6>
-           </div>
-         </div>
- <!-- more products -->
-</section>
-</body>
+    </footer>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+  </body>
 </html>
