@@ -18,18 +18,28 @@ body {
   line-height: 25px; /* Vertically center the text there */
 }
 
-
 /* Custom page CSS
 -------------------------------------------------- */
 /* Not required for template or sticky footer method. */
 
+/* for container-fluid */
+body > .container-fluid {
+  /* top right bottom left */
+  padding: 10px 30px 120px;
+}
+
+.footer > .container-fluid {
+  padding: 0px 15px 0px 15px;
+}
+
+/* for container */
 body > .container {
+  /* top right bottom left */
   padding: 10px 30px 120px;
 }
 
 .footer > .container {
-  padding-right: 15px;
-  padding-left: 15px;
+  padding: 0px 15px 0px 15px;
 }
 
 code {
