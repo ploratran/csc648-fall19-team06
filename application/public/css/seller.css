@@ -1,9 +1,3 @@
-/* Red Asterisk for Mandatory-field */
-.mandatory-field:before {
-    content:'*';
-    color: red;
-} 
-
 /* 404 Styling */
 * {
     -webkit-box-sizing: border-box;

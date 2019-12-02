@@ -1,35 +1,147 @@
 <% include ../partials/header %>
 
-    <style>
-        .container, .members-list {
-            text-align: center;
-        }
-    </style>
+<style>
+    .my-container {
+        margin: 10px;
+        border: 1px solid green;
+    }
 
-    <div class='container'>
-        <h1>Team members</h1>
-        <ul class='members-list'>
-            <li class='member-name'>
-                <a href="/aboutTT" target="_blank">Thomas Tran</a>
-            </li>
-            <li class='member-name'>
-                <a href="/aboutPB" target="_blank">Poulomi Banerjee</a>
-            </li>
-            <li class='member-name'>
-                <a href="/aboutMP" target="_blank">Manish Patil</a>
-            </li>
-            <li class='member-name'>
-                <a href="/aboutJH" target="_blank">Jinan Huang</a>
-            </li>
-    
-            <li class='member-name'>
-                <a href="/aboutZW" target="_blank">Zihao Wu</a>
-    
-            </li>
-            <li class='member-name'>
-                <a href="/aboutPT" target="_blank">Phuong Tran</a>
-            </li>
-        </ul>
+    .my-row {
+        border: 3px solid red;
+    }
+
+    .my-col {
+        border: 3px dotted blue;
+        height: 250px;
+    }
+
+    @import 'https://fonts.googleapis.com/css?family=Raleway:400';
+
+    body{
+        font-family: 'Raleway', sans-serif;
+    }
+
+    a:focus{
+        outline:none;
+    }
+
+    h1{
+        padding:50px;
+    }
+
+    h1:after{
+        content: " ";
+        border-bottom-style: solid;
+        border-bottom-width:2px;
+        display:block;
+        width:100px;
+        margin: 0 auto;
+        border: 0;
+        height: 1px;
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    } 
+
+    .nav-tabs {
+        border-bottom: none;
+    }
+
+    .nav-tabs > li > a img {
+        width: 180px;
+    }
+
+    .nav > li > a{
+        padding:0;
+    }
+
+    .tab-content img{
+        box-shadow: 0 0px 10px rgba(0, 0, 0, 0.5);
+    }
+
+</style>
+
+<!-- <div class='my-container'>
+    <h1 class="text-center">The Team</h1>
+    <div class='row'> 
+        <div class='tabbable tabs-left'>
+            <ul class='nav nav-tabs cold-md-5'>
+                <li class=''>
+                    <a href="#a" data-toggle="tab" aria-expanded="false"><img src="http://static.pexels.com/photos/51969/model-female-girl-beautiful-51969-large.jpeg" alt=" profile " class="img-responsive">
+                    </a>
+                </li>
+                <li class="">
+                    <a href="#b" data-toggle="tab" aria-expanded="false"><img src="http://static.pexels.com/photos/185847/pexels-photo-185847-large.jpeg" alt=" profile " class="img-responsive">
+                    </a>
+                </li>
+                <li class="">
+                    <a href="#c" data-toggle="tab" aria-expanded="false"><img src="http://static.pexels.com/photos/94589/pexels-photo-94589-large.jpeg" class="img-responsive">
+                    </a>
+                </li>
+                <li class="">
+                    <a href="#d" data-toggle="tab" aria-expanded="false"><img src="http://static.pexels.com/photos/108036/pexels-photo-108036-large.jpeg" alt=" profile " class="img-responsive">
+                    </a>
+                </li>
+            </ul>
+
+            <div class='tab-content col-md-7'>
+            </div>
+        </div>
     </div>
-    
+</div> -->
+
+
+<div class="container">
+    <h1 class="text-center">The Team</h1>
+    <div class="row">
+        <div class="tabbable tabs-left">
+            <ul class="nav nav-tabs col-md-5 col-lg-5 col-sm-6 col-xs-6">
+                <li class="">
+                    <a href="#a" data-toggle="tab" aria-expanded="false"><img src="http://static.pexels.com/photos/51969/model-female-girl-beautiful-51969-large.jpeg" alt=" profile " class="img-responsive">
+                    </a>
+                </li>
+                <li class="">
+                    <a href="#b" data-toggle="tab" aria-expanded="false"><img src="http://static.pexels.com/photos/185847/pexels-photo-185847-large.jpeg" alt=" profile " class="img-responsive">
+                    </a>
+                </li>
+                <li class="">
+                    <a href="#c" data-toggle="tab" aria-expanded="false"><img src="http://static.pexels.com/photos/94589/pexels-photo-94589-large.jpeg" class="img-responsive">
+                    </a>
+                </li>
+                <li class="">
+                    <a href="#d" data-toggle="tab" aria-expanded="false"><img src="http://static.pexels.com/photos/108036/pexels-photo-108036-large.jpeg" alt=" profile " class="img-responsive">
+                    </a>
+                </li>
+                <li class="">
+                    <a href="#e" data-toggle="tab" aria-expanded="false"><img src="http://static.pexels.com/photos/175696/pexels-photo-175696-large.jpeg" alt=" profile " class="img-responsive">
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="#f" data-toggle="tab" aria-expanded="true"><img src="http://static.pexels.com/photos/1543/landscape-nature-man-person-large.jpg" alt=" profile " class="img-responsive">
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</div>
+
 <% include ../partials/footer %>
+
+<!-- <div class='container my-container'>
+    <h1 class="text-center">The Team</h1>
+    <div class='row my-row'>
+        <div class='col-md-4 col-sm-6 my-col'>
+            Row 1 Col 1
+        </div>
+        <div class='col-md-8 col-sm-6 my-col'>
+            Row 1 Col 2
+        </div>
+    </div>
+    <div class='row justify-content-around align-items-stretch my-row'>
+        <div class='col-4 offset-md-2  my-col order-md-12'>
+            Row 2 Col 1
+        </div>
+        <div class='col-4 my-col align-self-start order-md-2'>
+            Row 2 Col 2
+        </div>
+    </div>
+</div> -->
