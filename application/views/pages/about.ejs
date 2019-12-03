@@ -1,35 +1,166 @@
 <% include ../partials/header %>
 
-    <style>
-        .container, .members-list {
-            text-align: center;
-        }
-    </style>
+<style>
+    @import 'https://fonts.googleapis.com/css?family=Raleway:400';
 
-    <div class='container'>
-        <h1>Team members</h1>
-        <ul class='members-list'>
-            <li class='member-name'>
-                <a href="/aboutTT" target="_blank">Thomas Tran</a>
-            </li>
-            <li class='member-name'>
-                <a href="/aboutPB" target="_blank">Poulomi Banerjee</a>
-            </li>
-            <li class='member-name'>
-                <a href="/aboutMP" target="_blank">Manish Patil</a>
-            </li>
-            <li class='member-name'>
-                <a href="/aboutJH" target="_blank">Jinan Huang</a>
-            </li>
-    
-            <li class='member-name'>
-                <a href="/aboutZW" target="_blank">Zihao Wu</a>
-    
-            </li>
-            <li class='member-name'>
-                <a href="/aboutPT" target="_blank">Phuong Tran</a>
-            </li>
-        </ul>
+    body{
+    font-family: 'Raleway', sans-serif;
+    }
+
+    .team {
+        margin: 75px 0;
+    }
+
+    h1{
+        padding:20px;
+        text-align: center;
+    }
+
+    h1:after{
+        content: " ";
+        border-bottom-style: solid;
+        border-bottom-width:2px;
+        display:block;
+        width:100px;
+        margin: 0 auto;
+        border: 0;
+        height: 1px;
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    } 
+    .profile {
+        margin-top: 25px;
+    }
+
+    .profile .img-box {
+        opacity: 1;
+        display: block;
+        position: relative;
+    }
+
+    .profile h2 {
+        font-size: 22px;
+        font-weight: bold;
+        margin-top: 15px;
+    }
+
+    .profile h3 {
+        font-size: 15px;
+        font-weight: bold;
+        margin-top: 15px;
+    }
+
+    .img-box:after {
+        content: '';
+        opacity: 0;
+        background-color: rgb(0,0,0,0.2);
+        position: absolute;
+    }
+    .img-box ul {
+        margin: 0;
+        padding: 30px 0;
+        position: absolute;
+        z-index: 1;
+        bottom: 0;
+        display: block;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
+    }
+    .img-box ul li {
+        width: 30px;
+        height: 30px;
+        border: 1px solid #fff;
+        border-radius: 50%;
+        margin: 3px;
+        padding: 7px;
+        display: inline-block;
+    }
+    .img-box a {
+        color: #fff;
+    }
+    .img-box:hover::after {
+        opacity: 1.5;
+    }
+    .img-box:hover ul {
+        opacity: 1;
+    }
+    .img-box a:hover li {
+        color: #007;
+        border: 1px solid #007;
+    }
+    .img-box:after, .img-box ul, .img-box ul li {
+        transition: all 0.5s ease-in-out 0s;
+    }
+</style>
+
+<div class='container'>
+    <div class='bg-light'>
+        <h1>Our Team</h1>
+        <h2>Our Mission</h2>
+        <hr />
+        <p>We are the people who have made this website becomes possible.</p>
+        <p>Our mission is to provide a platform for current San Francisco State University community 
+            a safe and convenient place to buy and sell their used products.</p>
+        <hr />
     </div>
     
+    <div class='row justify-content-between'>
+        <div class='col-md-3 profile text-center'>
+            <div class='img-box'>
+                <img src='/members/pt.jpg' width='250px' height='250px' class='img-responsive'>
+            </div>
+            <h2>Manish Patil</h2>
+            <h3>Team Lead</h3>
+            <p><a href="/aboutMP" target="_blank">Learn More</a></p>
+        </div>
+        <div class='col-md-3 profile text-center'>
+            <div class='img-box'>
+                <img src='/members/pt.jpg' width='250px' height='250px' class='img-responsive'>
+            </div>
+            <h2>Thomas Tran</h2>
+            <h3>Backend Lead</h3>
+            <p><a href="/aboutTT" target="_blank">Learn More</a></p>
+        </div>
+        <div class='col-md-3 profile text-center'>
+            <div class='img-box'>
+                <img src='/members/pt.jpg' width='250px' height='250px' class='img-responsive'>
+            </div>
+            <h2>Phuong Tran</h2>
+            <h3>Frontend Lead</h3>
+            <p><a href="/aboutPT" target="_blank">Learn More</a></p>
+        </div>
+    </div>
+    <div class='row justify-content-between'>
+        <div class='col-md-3 profile text-center'>
+                <div class='img-box'>
+                    <img src='/members/pt.jpg' width='250px' height='250px' class='img-responsive'>
+                    <ul>
+                        <a href='#'><li><i class="fa fa-github" aria-hidden="true"></i></li></a>
+                        <a href='#'><li><i class="fa fa-linkedin" aria-hidden="true"></i></li></a>
+                    </ul>
+                </div>
+                <h2>Poulomi Banerjee</h2>
+                <h3>Github Master</h3>
+                <p><a href="/aboutPB" target="_blank">Learn More</a></p>
+            </div>
+        <div class='col-md-3 profile text-center'>
+            <div class='img-box'>
+                <img src='/members/pt.jpg' width='250px' height='250px' class='img-responsive'>
+            </div>
+            <h2>Jinan Huang</h2>
+            <h3>Frontend Developer</h3>
+            <p><a href="/aboutJH" target="_blank">Learn More</a></p>
+        </div>
+        <div class='col-md-3 profile text-center'>
+            <div class='img-box'>
+                <img src='/members/pt.jpg' width='250px' height='250px' class='img-responsive'>
+            </div>
+            <h2>Zihao Wu</h2>
+            <h3>Frontend Developer</h3>
+            <p><a href="/aboutZW" target="_blank">Learn More</a></p>
+        </div>
+    </div>
+</div>
+
+
 <% include ../partials/footer %>

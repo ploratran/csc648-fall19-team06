@@ -36,6 +36,15 @@ module.exports = {
     about: (req, res) => {
                 res.render(pages + '/about');
     },
+    listing: (req, res) => {
+        res.render(pages + '/listing');
+    },
+    accountHistory: (req, res) => {
+        res.render(pages + '/accountHistory');
+    },
+    items: (req, res) => {
+        res.render(pages+'/items');
+    },
     searchCategory:(req, res)=>{
         var category = req.params.category;
         
