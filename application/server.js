@@ -1,3 +1,4 @@
+
 const express = require('express'); //express framework 
 const fileUpload = require('express-fileupload'); //file upload
 const path = require('path');
@@ -11,17 +12,17 @@ const pages = path.join(__dirname, '/views/pages');
 
 
 // connect to db:
-db.connect((err) => {
-    if (err) {
-        console.log('Error connecting MySQL Database...');
-        return;
-    }
-    console.log('MySQL Database Connected...');
-})
+//db.connect((err) => {
+//    if (err) {
+//        console.log('Error connecting MySQL Database...');
+//        return;
+//    }
+//    console.log('MySQL Database Connected...');
+//})
 
 //Global declare variables
 global.pages = pages;
-global.db = db; //globally declares db
+//global.db = db; //globally declares db
 
 const {getHomePage, sell, login, register, forgotPassword,about, searchCategory} = require('./routers/home');
 const {searchProducts, addProductPage, addProduct} = require('./routers/search');
