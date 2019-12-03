@@ -9,7 +9,7 @@ module.exports = {
                     res.redirect('/');
                 }
                 res.render(pages + '/home', {
-                    title: "Welcome to SFSU | View Proucts",
+                    title: "Welcome to SFSU | View Products",
                     categories: result
                 });
                 // console.log("Categories", result);
@@ -26,7 +26,7 @@ module.exports = {
         const path = require('path');
         const pages = path.join(__dirname, '../views/pages');
                 res.render(pages + '/login', {
-                    title: "Welcome to SFSU | View Proucts"
+                    title: "Welcome to SFSU | View Products"
                 });
     },
     register: (req, res) => {

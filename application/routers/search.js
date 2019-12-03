@@ -33,6 +33,30 @@ module.exports = {
             });
         });
     },
+    // searchCategory: (req, res) => {
+    //     const path = require('path');
+    //     const pages = path.join(__dirname, '../views/pages');
+    //
+    //     searchString = req.body.search;
+    //     categoryString = req.body.categoryName;
+    //     console.log("--->",req.body);
+    //     // let query = "SELECT * FROM `Products` ORDER BY productId ASC"; // query database to get all the players
+    //
+    //     if( searchString != undefined &&  categoryString != undefined ){
+    //         var query = "SELECT * FROM Category WHERE title LIKE '%" +searchString+ "' AND categoryName LIKE '%" +categoryString+ "';"
+    //     }else if(searchString == undefined){
+    //
+    //         var query = "SELECT * FROM Category WHERE title LIKE '%" +searchString+ "';"
+    //
+    //     }else if(categoryString == undefined){
+    //
+    //         var query = "SELECT * FROM Category WHERE title LIKE '%" +searchString+ "';"
+    //     }else{
+    //
+    //         var query = "SELECT * FROM Category"
+    //     }
+    //
+    // },
     addProductPage: (req, res) => {
         const path = require('path');
         const pages = path.join(__dirname, '../views/pages');
@@ -150,4 +174,4 @@ module.exports = {
             });
         });
     }
-}
+};

@@ -1,9 +1,14 @@
 const express = require('express'); //express framework 
+const fileUpload = require('express-fileupload'); //file upload
 const path = require('path');
 const mysql = require('mysql');
 const bodyparser = require('body-parser');
+// initialize app:
+const app = express();
 const db = require('./model/database');
-const port = 3000; //port #, can change if there is an issue persisting
+const port = 3001; //port #, can change if there is an issue persisting
+const pages = path.join(__dirname, '/views/pages');
+
 
 // connect to db:
 db.connect((err) => {
@@ -12,19 +17,18 @@ db.connect((err) => {
         return;
     }
     console.log('MySQL Database Connected...');
-})
+});
 
-// initialize app:
-const app = express();
+//Global declare variables
+global.pages = pages;
+global.db = db; //globally declares db
 
-// define all routes: 
+const {getHomePage, sell, login, register, forgotPassword,about, searchCategory} = require('./routers/home');
+const {searchProducts, addProductPage, addProduct} = require('./routers/search');
+const {getEmail, getPassword} = require('./routers/login');
+// const {about, aboutTT} = require('./routers/about');
 const aboutRouter = require('./routers/about');
-const homeRouter = require('./routers/home');
-const sellRouter = require('./routers/sell');
-const loginRouter = require('./routers/login');
-const registerRouter = require('./routers/register');
-const forgotRouter = require('./routers/forgot-password');
-const searchRouter = require('./routers/search');
+app.use('/', aboutRouter);
 
 // set view engine as ejs:
 app.set('view engine', 'ejs'); 
@@ -32,16 +36,22 @@ app.set('views', path.join(__dirname, 'views')); //serve files in views folder
 
 // all middlewares: 
 app.use(bodyparser.json());
-app.use(bodyparser.urlencoded({ extended: false }));
+app.use(fileUpload()); // configure fileupload
 app.use(express.static('public')); //serve public static files
 
-app.use('', homeRouter);
-app.use('', aboutRouter);
-app.use('', sellRouter);
-app.use('', loginRouter);
-app.use('', registerRouter);
-app.use('', forgotRouter);
-app.use('', searchRouter);
+
+app.get('/', getHomePage);
+app.get('/sell', sell);
+app.get('/login', login);
+app.get('/login/email', getEmail); //Poulomi's code
+app.get('/login/password', getPassword); //Poulomi's code
+app.get('/register', register);
+app.get('/forgot-password', forgotPassword);
+app.post('/searchProducts', searchProducts);
+// app.get('/searchCategory/:category', searchCategory);
+app.get('/addProduct', addProductPage);
+app.post('/addProduct', addProduct);
+app.get('/about', about);
 
 app.use(function(req,res) {
     res.status(400).render(path.join(__dirname, '/views/pages/404'));
