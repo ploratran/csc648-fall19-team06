@@ -39,6 +39,9 @@ module.exports = {
     listing: (req, res) => {
         res.render(pages + '/listing');
     },
+    accountHistory: (req, res) => {
+        res.render(pages + '/accountHistory');
+    },
     items: (req, res) => {
         res.render(pages+'/items');
     },
