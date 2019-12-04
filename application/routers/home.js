@@ -2,16 +2,19 @@ module.exports = {
     //Home page
     getHomePage: (req, res) => {
             let query = "SELECT * FROM `Category`"; // query database to get all the categories
-            db.query(query, (err, result) => {
-                if (err) {
-                    res.redirect('/');
-                }
-                res.render(pages + '/home', {
-                    title: "Welcome to SFSU | View Proucts",
-                    categories: result
+//            db.query(query, (err, result) => {
+//                if (err) {
+//                    res.redirect('/');
+//                }
+//                res.render(pages + '/home', {
+//                    title: "Welcome to SFSU | View Proucts",
+//                    categories: result
+//                });
+//                // console.log("Categories", result);
+//            });
+        res.render(pages + '/home', {
+                    title: "Welcome to SFSU | View Proucts"
                 });
-                // console.log("Categories", result);
-            });
     },
     sell: (req, res) => {
                 res.render(pages + '/sell', {
@@ -41,6 +44,9 @@ module.exports = {
     },
     accountHistory: (req, res) => {
         res.render(pages + '/accountHistory');
+    },
+    contactSeller: (req, res) => {
+        res.render(pages + '/contactSeller');
     },
     items: (req, res) => {
         res.render(pages+'/items');
