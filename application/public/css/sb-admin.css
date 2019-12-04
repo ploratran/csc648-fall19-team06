@@ -562,7 +562,7 @@ pre code {
   margin-left: auto;
 }
 
-@media (min-width: 576px) {
+/* @media (min-width: 576px) {
   .container {
     max-width: 540px;
   }
@@ -572,13 +572,13 @@ pre code {
   .container {
     max-width: 720px;
   }
-}
+} */
 
-@media (min-width: 992px) {
+/* @media (min-width: 992px) {
   .container {
     max-width: 960px;
   }
-}
+} */
 
 @media (min-width: 1200px) {
   .container {
@@ -1061,7 +1061,7 @@ pre code {
   .offset-sm-11 {
     margin-left: 91.66667%;
   }
-}
+} 
 
 @media (min-width: 768px) {
   .col-md {
@@ -1463,7 +1463,7 @@ pre code {
   .offset-lg-11 {
     margin-left: 91.66667%;
   }
-}
+} 
 
 @media (min-width: 1200px) {
   .col-xl {

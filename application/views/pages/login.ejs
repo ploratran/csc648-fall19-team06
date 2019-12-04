@@ -2,9 +2,7 @@
 
 <!-- Start with the Body Here -->
 <body>
-    <!-- <div class="chat-popup" id="myForm">
-    </div> -->
-
+    
     <div class="container">
         <div class="card card-login mx-auto mt-5">
             <div class="card-header">Login</div>
@@ -13,23 +11,23 @@
                         <div class="form-group">
                             <div class="form-label-group">
                                 <input class="form-control"
-                                    type="email" 
+                                    type="text" 
                                     id="inputEmail"  
                                     placeholder="Email address" 
-                                    required="required" 
+                                    required
                                     autofocus="autofocus"
-                                >
+                                />
                                 <label for="inputEmail">Email address</label>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="form-label-group">
                                 <input class="form-control" 
-                                    type="password" 
+                                    type="text" 
                                     id="inputPassword" 
                                     placeholder="Password" 
-                                required="required"
-                                >
+                                    required
+                                />
                                 <label for="inputPassword">Password</label>
                             </div>
                         </div>
@@ -48,11 +46,14 @@
                     </form>
                 <div class="text-center">
                     <a class="d-block small mt-3" href="register">Register an Account</a>
-                    <a class="d-block small" href="forgot-password">Forgot Password?</a>
+                    <a class="d-block small" href="#" data-toggle="modal" data-target="#forgotPassword">Forgot Password?</a>
                 </div>
             </div>
         </div>
     </div>
+    
+<!-- include forgotPasswordModal HERE!! -->
+<%- include ../partials/forgotPasswordModal %>
     
 <!-- DO NOT PUT </body> TAG HERE!!! -->
 

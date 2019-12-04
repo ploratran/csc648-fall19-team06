@@ -1,0 +1,76 @@
+<!-- import Header includes Navbar, Banner Here!!! -->
+<% include ../partials/header %>
+
+<style>
+.product-filter {
+  display: flex;
+}
+.product-filter h5 {
+  flex-grow: 1;
+}
+  .sort {
+  display: flex;
+}
+.collection-sort {
+  display: flex;
+  flex-direction: column;
+}
+</style>
+
+<!-- Breadcrumbs -->
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb bg-white">
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
+    <!-- Backend please plug in Product Category HERE!!! -->
+    <li class="breadcrumb-item"><a href="/listing">Category</a></li>
+  </ol>
+</nav>
+
+<div class="container-fluid">
+  
+  <!-- FILTER  -->
+  <nav class = "product-filter">
+  <h5>1 of results</h5>
+  <div class ="sort">
+  <div class="collection-sort">
+      <label>Sort by:</label>
+      <select>
+          <option value="/">None</option>
+          <option value="/low">Price: low to high</option>
+          <option value="/high">Price: high to low</option>
+      </select>
+  </div>
+  </div>
+  </nav>
+
+
+
+  <!-- LISTING -->
+  <div class="row">
+    <div class="col-md-3 col-sm-6 mb-4">
+      <a href="#">
+        <img class="img-fluid" src="http://placehold.it/500x300" alt="">
+      </a>
+      <button><a href='/items'>Details</a></button>
+    </div>
+
+    <div class="col-md-3 col-sm-6 mb-4">
+      <a href="/items">
+        <img class="img-fluid" src="http://placehold.it/500x300" alt="">
+        <button><a href='/items'>Details</a></button>
+      </a>
+    </div>
+
+    <div class="col-md-3 col-sm-6 mb-4">
+      <a href="/items">
+        <img class="img-fluid" src="http://placehold.it/500x300" alt="">
+        <button><a href='/items'>Details</a></button>
+      </a>
+    </div>
+    
+  </div> <!-- end row -->
+</div> <!--end container -->
+
+
+<!-- import Footer HERE!!! -->
+<% include ../partials/footer %>

@@ -39,22 +39,31 @@ module.exports = {
     about: (req, res) => {
                 res.render(pages + '/about');
     },
+    listing: (req, res) => {
+        res.render(pages + '/listing');
+    },
+    accountHistory: (req, res) => {
+        res.render(pages + '/accountHistory');
+    },
+    contactSeller: (req, res) => {
+        res.render(pages + '/contactSeller');
+    },
+    items: (req, res) => {
+        res.render(pages+'/items');
+    },
     searchCategory:(req, res)=>{
         var category = req.params.category;
         
         var query = "SELECT * FROM Products WHERE categoryName LIKE '%" + category+ "';"
         // execute query
-//        db.query(query, (err, result) => {
-//            if (err) {
-//                res.redirect('/');
-//            }
-//            res.render(pages + '/search2', {
-//                title: "Welcome to SFSU | View Proucts",
-//                products: result
-//            });
-//        });
-        res.render(pages + '/search2', {
-                title: "Welcome to SFSU | View Proucts"
+        db.query(query, (err, result) => {
+            if (err) {
+                res.redirect('/');
+            }
+            res.render(pages + '/search2', {
+                title: "Welcome to SFSU | View Proucts",
+                products: result
             });
+        });
     }
 };
