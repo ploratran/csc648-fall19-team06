@@ -1,33 +1,32 @@
 <!-- Footer has: copyright, About, Policy only!!! -->
 
 <!-- DO NOT PUT OPENING <body> and <html> HERE!!! -->
-    <style>
-        .textcolor {
-            color: #fff;
-        }
-    </style>  
 
-    <!-- Policy Guidelines Modal HERE!!! -->
-    <% include ./policyModal %>
+<!-- Footer Style -->
+<style>
+    .textcolor {
+        color: #fff;
+        font-size: 18px;
+    }
+</style>  
 
-    <div>
-        <footer id="main-footer" class="bg-dark">
-            <div class=" textcolor col text-center">
-                <p>Copyright © 2019</p>
-                <a href = "/about" class='textcolor'>About</a>
-                    <span class="textcolor text-muted mx-2">|</span> 
-                    <a href="#" class="textcolor" data-toggle='modal' data-target='#policy'>
-                    Policy 
-                </a> 
-            </div>
-        </footer>
+<!-- Sticky Footer -->
+<footer class="footer bg-dark">
+    <div class="container textcolor text-center">
+        <p class="textcolor">Copyright © 2019</p>
+        <a href="#" class="textcolor" data-toggle='modal' data-target='#myPolicy'>
+            Policy 
+        </a> 
     </div>
+</footer>
 
+<% include ./policyModal %>
 
-    <!-- Bootstrap in <body> -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/js/bootstrap.min.js" integrity="sha384-3qaqj0lc6sV/qpzrc1N5DC6i1VRn/HyX4qdPaiEFbn54VjQBEU341pvjz7Dv3n6P" crossorigin="anonymous"></script>
 
 </body>
 </html>

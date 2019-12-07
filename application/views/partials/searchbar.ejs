@@ -1,0 +1,31 @@
+<!-- Search Bar HERE!!! -->
+
+<header id='search-section'>
+    <form>
+        <div class='search-inner px-3'>
+            <div class='input-group mb-3'>
+                <div class="input-group-prepend">
+                    <select class="form-control" name="listingType" style=" -webkit-appearance: none; 
+                    -webkit-border-radius: 0px;height: 100%;">
+                        <!-- Categories  -->
+                        <option value="" selected>All</option>
+                        <option value="" >Books</option>
+                        <option value="" >Furnitures</option>
+                        <option value="" >Electronics</option>
+                        <option value="" >Sports</option>
+                        <option value="" >Tickets</option>
+                    </select>
+                </div>
+                <!-- Maximum search word to 50 characters!!! -->
+                <input name='' type='text' class='form-control form-control-md' 
+                        placeholder='Search here ...' maxlength="50" value=''
+                />
+                <span class='input-group-prepend'>
+                    <button class='btn btn-primary' type='submit'>
+                        <i class='fa fa-search' aria-hidden='true'></i>
+                    </button>
+                </span>
+            </div>
+        </div>
+    </form>
+</header>

@@ -1,13 +1,8 @@
 
 module.exports = {
     searchProducts: (req, res) => {
-        const path = require('path');
-        const pages = path.join(__dirname, '../views/pages');
-
         searchString = req.body.search;
         categoryString = req.body.categoryName;
-        console.log("--->",req.body);
-        // let query = "SELECT * FROM `Products` ORDER BY productId ASC"; // query database to get all the players
 
         if( searchString != undefined &&  categoryString != undefined ){
             var query = "SELECT * FROM Products WHERE title LIKE '%" +searchString+ "' AND categoryName LIKE '%" +categoryString+ "';"
@@ -58,18 +53,12 @@ module.exports = {
     //
     // },
     addProductPage: (req, res) => {
-        const path = require('path');
-        const pages = path.join(__dirname, '../views/pages');
-
         res.render(pages + '/addProduct', {
             title: "Add product for sell",
             message: ''
         });
     },
     addProduct: (req, res) => {
-        const path = require('path');
-        const pages = path.join(__dirname, '../views/pages');
-
         if (!req.files) {
             return res.status(400).send("No files were uploaded.");
         }
@@ -95,7 +84,6 @@ module.exports = {
                 var image  = image_name;
                 let query = "INSERT INTO `Products` (title, description, price, location, categoryName, image) VALUES ('" +
                     title + "', '" + description + "', '" + price + "', '" + location + "', '"  + categoryName + "', '" + image +  "')";
-                    console.log("categry Name", categoryName);
                 db.query(query, (err, result) => {
                     if (err) {
                         return res.status(500).send(err);
@@ -112,9 +100,6 @@ module.exports = {
         }
     },
     editProductPage: (req, res) => {
-        const path = require('path');
-        const pages = path.join(__dirname, '../views/pages');
-
         let productId = req.params.id;
         let query = "SELECT * FROM `Products` WHERE productId = '" + productId + "' ";
         db.query(query, (err, result) => {
