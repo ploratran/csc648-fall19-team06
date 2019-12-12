@@ -1,5 +1,5 @@
 <!-- import Header includes Navbar, Banner Here!!! -->
-<% include ../partials/header %>
+
 
 <style>
 input[type=text], select, textarea {
@@ -29,6 +29,8 @@ input[type=submit]:hover {
 .container {
   max-width:30%;
   max-height:30%;
+  margin: auto;
+  width: 50%;
 }
 </style>
 
@@ -40,29 +42,33 @@ input[type=submit]:hover {
 
           <form action="/action_page.php">
             <label for="fname">First Name</label>
-            <input type="text" id="fname" name="firstname" placeholder="Your name..">
-        
+            <input type="text" id="fname" name="firstname" required="required" placeholder="Your name..">
+            <br>
+            <br>
             <label for="lname">Last Name</label>
-            <input type="text" id="lname" name="lastname" placeholder="Your last name..">
-        
+            <input type="text" id="lname" name="lastname" required="required" placeholder="Your last name..">
+            <br>
+            <br>
             <label for="problemType">Problem Type</label>
+            <br>
+            <br>
             <select id="problemType" name="problemType">
               <option value="1">selling item question</option>
               <option value="2">request for exchange time</option>
               <option value="3">return item</option>
               <option value="4">others</option>
             </select>
-        
+            <br>
+            <br>
             <label for="subject">Subject</label>
-            <textarea id="subject" name="subject" placeholder="more detail..." style="height:200px"></textarea>
+            <textarea id="subject" name="subject" placeholder="Please state your problem..." style="height:200px"></textarea>
         
             <input type="submit" value="Submit">
           </form>
-
+          
 
 </div>
 
 <!-- DO NOT PUT </body> TAG HERE!!! -->
 
 <!-- import Footer HERE!!! -->
-<% include ../partials/footer %>
