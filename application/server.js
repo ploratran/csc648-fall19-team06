@@ -6,7 +6,7 @@ const bodyparser = require('body-parser');
 // initialize app:
 const app = express();
 const db = require('./model/database');
-const port = 3000; //port #, can change if there is an issue persisting
+const port = 3001; //port #, can change if there is an issue persisting
 const pages = path.join(__dirname, '/views/pages');
 
 
