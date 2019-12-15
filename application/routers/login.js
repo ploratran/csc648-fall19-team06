@@ -1,12 +1,12 @@
-//Poulomi Start code
-
+// //Poulomi Start code
+//
 module.exports = {
-    // getEmailPage: (req, res) => {
-    //     res.render(pages + '/addProduct', {
-    //         title: "Add product for sell",
-    //         email: ''
-    //     });
-    // },
+    getEmailPage: (req, res) => {
+        res.render(pages + '/login', {
+            title: "Add email",
+            email: ''
+        });
+    },
     getEmail: (req, res) => {
         if (!req.toString()) {
             return res.status(400).send("No string is inputted.");
@@ -21,7 +21,7 @@ module.exports = {
         let rating = req.body.rating;
         let review = req.body.review;
         let type = req.body.type;
-        let productId = req.body.productId
+        let productId = req.body.productId;
 
         if (username.mimetype === '@mail.sfsu.edu') {
             // upload the file to the /public/assets/img directory
@@ -31,7 +31,7 @@ module.exports = {
                 }
                 // send the player's details to the database
                 var username  = username;
-                let query = "INSERT INTO `Users` (userId, username, password, firstName, lastName, email, rating, review, type, productId) VALUES ('" +
+                let query = "INSERT INTO `Users` (userId, username, password, firstName, lastName, email, rating, review, `type`, productId) VALUES ('" +
                     userId + "', '" + username + "', '" + password + "', '" + firstName + "', '"  + lastName + "', '" + email + "', '"  + rating + "', '"  + review + "', '"  + type + "', '"  + productId +"')";
                 db.query(query, (err, result) => {
                     if (err) {
