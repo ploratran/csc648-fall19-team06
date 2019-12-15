@@ -8,8 +8,14 @@ const app = express();
 const db = require('./model/database');
 const port = 3000; //port #, can change if there is an issue persisting
 const pages = path.join(__dirname, '/views/pages');
-
-
+//const bcrypt = require('bcrypt');
+//const saltRounds = 10; //saltRounds for salting the hash
+//let hash = bcrypt.hashSync('myPassword', saltRounds); //stores hash 
+//if(bcrypt.compareSync('somePassword', hash)) {
+ // Passwords match
+//} else {
+    // Passwords don't match
+ //  }
 // connect to db:
 db.connect((err) => {
     if (err) {
