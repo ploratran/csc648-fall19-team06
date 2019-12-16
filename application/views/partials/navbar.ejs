@@ -37,17 +37,20 @@
 
                 <form class="add-player-form" action="/searchProducts" method="post" enctype="multipart/form-data">
                     <div class="form-row">
+
                         <div class="form-group col-md-3">
-                                    <select id="position" name="categoryName" class="form-control" required>
-                                        <option selected disabled>Choose category</option>
-                                        <option>Books</option>
-                                        <option>Furniture</option>
-                                        <option>Electronics</option>
-                                        <option>Clothing</option>
-                                        <option>Sports</option>
-                                        <option>Events</option>                                        
-                                    </select>
+                            <select id="position" name="categoryName" class="form-control" required>
+                                <option selected disabled>Choose category</option>
+                                <% categories.forEach((category, index) => { %>
+                                                                    
+                                    <option><%= category.categoryName %></option>
+                                     
+                                <% }) %>
+                                                                      
+                            </select>
                         </div>
+
+                       
                         <div class="form-group col-md-6">
                                 <input type="text" class="form-control" name="search" id="search" placeholder="Search Product">
                         </div>
