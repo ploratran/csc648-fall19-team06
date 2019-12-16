@@ -15,7 +15,7 @@ module.exports = {
     },
     sell: (req, res) => {
                 res.render(pages + '/sell', {
-                    title: "Welcome to SFSU | View Proucts"
+                    title: "Welcome to SFSU | View Products"
                 });
     },
     login: (req, res) => {
@@ -25,12 +25,12 @@ module.exports = {
     },
     register: (req, res) => {
                 res.render(pages + '/register', {
-                    title: "Welcome to SFSU | View Proucts"
+                    title: "Welcome to SFSU | View Products"
                 });
     },
     forgotPassword: (req, res) => {
                 res.render(pages + '/forgot-password', {
-                    title: "Welcome to SFSU | View Proucts"
+                    title: "Welcome to SFSU | View Products"
                 });
     },
     about: (req, res) => {
@@ -52,7 +52,7 @@ module.exports = {
                 res.redirect('/');
             }
             res.render(pages + '/search2', {
-                title: "Welcome to SFSU | View Proucts",
+                title: "Welcome to SFSU | View Products",
                 products: result
             });
         });
