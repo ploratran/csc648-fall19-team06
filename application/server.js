@@ -1,3 +1,4 @@
+
 const express = require('express'); //express framework 
 const fileUpload = require('express-fileupload'); //file upload
 const path = require('path');
@@ -64,6 +65,7 @@ app.get('/about', about);
 app.get('/listing', listing);
 app.get('/history', accountHistory);
 app.get('/items', items);
+app.get('/contactSeller', contactSeller);
 
 app.use((req,res) => {
     res.status(404).render(path.join(__dirname, '/views/pages/404'));

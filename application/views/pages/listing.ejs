@@ -1,6 +1,22 @@
 <!-- import Header includes Navbar, Banner Here!!! -->
 <% include ../partials/header %>
 
+<style>
+.product-filter {
+  display: flex;
+}
+.product-filter h5 {
+  flex-grow: 1;
+}
+  .sort {
+  display: flex;
+}
+.collection-sort {
+  display: flex;
+  flex-direction: column;
+}
+</style>
+
 <!-- Breadcrumbs -->
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb bg-white">
@@ -11,9 +27,11 @@
 </nav>
 
 <div class="container-fluid">
-  <p>1 of results</p>
-
+  
   <!-- FILTER  -->
+  <nav class = "product-filter">
+  <h5>1 of results</h5>
+  <div class ="sort">
   <div class="collection-sort">
       <label>Sort by:</label>
       <select>
@@ -22,6 +40,10 @@
           <option value="/high">Price: high to low</option>
       </select>
   </div>
+  </div>
+  </nav>
+
+
 
   <!-- LISTING -->
   <div class="row">

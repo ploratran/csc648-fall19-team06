@@ -25,11 +25,11 @@
   padding: 100px 20px;
   height: 100%;
 }
-#Brought {background-color: black;}
-#Selling {background-color: black;}
-#Sold {background-color: black;}
-#Contact {background-color: Black;}
-body{background-color:#6a1b9a}
+#Brought {background-color: rgb(92, 99, 104);}
+#Selling {background-color: rgb(92, 99, 104);}
+#Sold {background-color: rgb(92, 99, 104);}
+#Contact {background-color: rgb(92, 99, 104);}
+
 button.accordion{
   cursor:pointer;
   border:none;
@@ -69,18 +69,22 @@ div.panel.show{
   padding:8px;
   margin:2px 0 4px;
 }
+
+h3{
+  color:antiquewhite;
+}
 </style>
 
  <div class='container-fluid'> 
-    <button class="tablink" onclick="openPage('Brought', this, 'green')">Brought Products</button>
-    <button class="tablink" onclick="openPage('Selling', this, 'green')" id="defaultOpen">Selling Products</button>
-    <button class="tablink" onclick="openPage('Sold', this, 'green')">Sold Products</button>
-    <button class="tablink" onclick="openPage('Contact', this, 'green')">Message Box</button>
+    <button class="tablink" onclick="openPage('Brought', this, 'DarkGrey  ')" id="defaultOpen" >Buying History</button>
+    <button class="tablink" onclick="openPage('Selling', this, 'DarkGrey ')" >Selling Current</button>
+    <button class="tablink" onclick="openPage('Sold', this, 'DarkGrey ')">Selling History</button>
+    <button class="tablink" onclick="openPage('Contact', this, 'DarkGrey ')">Message Box</button>
     
     
     <div id="Brought" class="tabcontent">
         
-        <h3>History for proudct brought</h3>
+        <h3>History of the proudcts you have brought</h3>
         
                 <table style="width:100%">
         
@@ -97,7 +101,7 @@ div.panel.show{
     
     <div id="Selling" class="tabcontent">
     
-        <h3>Current user selling product</h3>
+        <h3>Your current selling products</h3>
         
                 <table style="width:100%">
         
@@ -114,7 +118,7 @@ div.panel.show{
     
     <div id="Sold" class="tabcontent">
     
-        <h3>History for proudct sold</h3>
+        <h3>History of your proudcts that have sold</h3>
     
                 <table style="width:100%">
         
@@ -129,16 +133,14 @@ div.panel.show{
     
     </div>
     
-    <div id="Contact" class="tabcontent">
-        <h3>rows with only title and date and when you click that row it expanse and you can see the message and there’s a reply box under it</h3>
-        
-        <button class="accordion">
+    <div id="Contact" class="tabcontent">  
+        <button class="accordion" >
         Product Title and date
-    </button>
+        </button>
     <div class="panel">
-    <p>should be chat content for both user and type content box with send button next to it</p>
-    <textarea rows="5" cols="100" name="description"> </textarea><br>
-    <a class="btn btn-primary btn-block" href="">Send</a>
+    <p>Message from the messgae sender</p>
+    <textarea rows="5" cols="100%" name="description"> </textarea><br>
+    <a class="btn btn-primary btn-block" href="">Reply</a>
     </div>
           
     </div>
