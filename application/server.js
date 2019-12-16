@@ -24,6 +24,7 @@ global.db = db; //globally declares db
 const {getHomePage, sell, login, register, about, accountHistory, listing, items, searchCategory,registerUser, loginUser} = require('./routers/home');
 const {searchProducts, addProductPage, addProduct} = require('./routers/search');
 const aboutRouter = require('./routers/about');
+//bcrypt for encrypting password
 const bcrypt = require('bcrypt');
 const session = require('express-session');
 global.bcrypt = bcrypt;
@@ -63,7 +64,6 @@ app.get('/about', about);
 app.get('/listing', listing);
 app.get('/history', accountHistory);
 app.get('/items', items);
-
 
 app.use((req,res) => {
     res.status(404).render(path.join(__dirname, '/views/pages/404'));

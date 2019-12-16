@@ -1,5 +1,3 @@
-// const bcrypt = require('bcrypt');
-// const session = require('express-session');
 module.exports = {
     //Home page
     getHomePage: (req, res) => {
@@ -8,7 +6,6 @@ module.exports = {
             if(req.session.user.username){
                 let loggedUsername = req.session.user.firstName;
             }
-            console.log(" loggedUsername ",req.session.user.firstName)
             db.query(query, (err, result) => {
                 if (err) {
                     res.redirect('/');
@@ -31,20 +28,6 @@ module.exports = {
                 res.render(pages + '/login', {
                     message
                 });
-    },
-    find:(username, res) => {
-        // prepare the sql query
-       let query = `SELECT * FROM Users WHERE username = ?`;
-
-       db.query(query, username, function(err, result) {
-           if(err) throw err
-
-           if(result.length) {
-               callback(result[0]);
-           }else {
-               callback(null);
-           }
-       });
     },
     loginUser: (req, res) => {
         let message = '';
@@ -78,9 +61,7 @@ module.exports = {
                 message
             });
            }
-        });
-         
-             
+        });      
     },
     register: (req, res) => {
                 res.render(pages + '/register', {
@@ -91,7 +72,6 @@ module.exports = {
     registerUser: (req, res) => {
         usernameLength = req.body.username.length;
         sfsuEmail = req.body.username.substr(usernameLength - 13,usernameLength);
-        // username.mimetype === '@mail.sfsu.edu'
         
         let message = '';
         let firstName = req.body.firstName;
