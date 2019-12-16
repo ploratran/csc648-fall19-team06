@@ -1,0 +1,182 @@
+<!-- import Header includes Navbar, Banner Here!!! -->
+<% include ../partials/header %>
+
+<!-- Start with the Body Here -->
+
+<style>
+.tablink {
+  background-color: #555;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 25%;
+}
+.tablink:hover {
+  background-color: #777;
+}
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+  color: white;
+  display: none;
+  padding: 100px 20px;
+  height: 100%;
+}
+#Brought {background-color: rgb(92, 99, 104);}
+#Selling {background-color: rgb(92, 99, 104);}
+#Sold {background-color: rgb(92, 99, 104);}
+#Contact {background-color: rgb(92, 99, 104);}
+
+button.accordion{
+  cursor:pointer;
+  border:none;
+  outline:none;
+  width:100%;
+  text-align:left;
+  background-color:transparent;
+  color:#fff;
+  padding:8px;
+  margin:4px 0;
+  border-radius:4px;
+  transition:0.3s;
+}
+button.accordion:hover{
+  background-color:rgba(255,255,255,0.3);
+}
+button.accordion.active{
+  background-color:#fff;
+  color:#000;
+  border-radius:4px 4px 0 0;
+  margin:4px 0 0;
+ }
+div.panel{
+  background-color:rgba(255,255,255,0.8);
+  color:#000;
+  border-radius:0 0 4px 4px;
+  overflow:hidden;
+  opacity:0;
+  max-height:0;
+  transition:0.3s;
+  padding:0 8px;
+  margin:0;
+}
+div.panel.show{
+  opacity:1;
+  max-height:500px;
+  padding:8px;
+  margin:2px 0 4px;
+}
+
+h3{
+  color:antiquewhite;
+}
+</style>
+
+ <div class='container-fluid'> 
+    <button class="tablink" onclick="openPage('Brought', this, 'DarkGrey  ')" id="defaultOpen" >Buying History</button>
+    <button class="tablink" onclick="openPage('Selling', this, 'DarkGrey ')" >Selling Current</button>
+    <button class="tablink" onclick="openPage('Sold', this, 'DarkGrey ')">Selling History</button>
+    <button class="tablink" onclick="openPage('Contact', this, 'DarkGrey ')">Message Box</button>
+    
+    
+    <div id="Brought" class="tabcontent">
+        
+        <h3>History of the proudcts you have brought</h3>
+        
+                <table style="width:100%">
+        
+                    <tr>
+                    <td><img src=""width="50" height="50"></td>
+                    <th><h5>product title</h5></th>
+                    <th><h5>product price</h5></th>
+                    <th><h5>product brought date</h5></th>
+                    </tr>
+    
+                </table>
+    </div>
+    
+    
+    <div id="Selling" class="tabcontent">
+    
+        <h3>Your current selling products</h3>
+        
+                <table style="width:100%">
+        
+                    <tr>
+                    <td><img src=""width="50" height="50"></td>
+                    <th><h5>product title</h5></th>
+                    <th><h5>product price</h5></th>
+                        <th><h5>product brought date</h5></th>
+                    </tr>
+    
+                </table>
+    </div>
+    
+    
+    <div id="Sold" class="tabcontent">
+    
+        <h3>History of your proudcts that have sold</h3>
+    
+                <table style="width:100%">
+        
+                    <tr>
+                    <td><img src=""width="50" height="50"></td>
+                    <th><h5>product title</h5></th>
+                    <th><h5>product price</h5></th>
+                    <th><h5>product brought date</h5></th>
+                    </tr>
+    
+                </table>
+    
+    </div>
+    
+    <div id="Contact" class="tabcontent">  
+        <button class="accordion" >
+        Product Title and date
+        </button>
+    <div class="panel">
+    <p>Message from the messgae sender</p>
+    <textarea rows="5" cols="100%" name="description"> </textarea><br>
+    <a class="btn btn-primary btn-block" href="">Reply</a>
+    </div>
+          
+    </div>
+        
+    <script>
+        function openPage(pageName,elmnt,color) {
+          var i, tabcontent, tablinks;
+          tabcontent = document.getElementsByClassName("tabcontent");
+          for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+          }
+          tablinks = document.getElementsByClassName("tablink");
+          for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].style.backgroundColor = "";
+          }
+          document.getElementById(pageName).style.display = "block";
+          elmnt.style.backgroundColor = color;
+        }
+        
+        // Get the element with id="defaultOpen" and click on it
+        document.getElementById("defaultOpen").click();
+        
+        var accordions = document.querySelectorAll("button.accordion");
+        
+        for (var i = 0; i < accordions.length; i++) {
+          accordions[i].onclick = function() {
+            this.classList.toggle("active");
+            this.nextElementSibling.classList.toggle("show");
+          };
+        }
+        
+    </script>
+</div>
+
+
+<!-- DO NOT PUT </body> TAG HERE!!! -->
+
+<!-- import Footer HERE!!! -->
+<% include ../partials/footer %>

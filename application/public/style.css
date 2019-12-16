@@ -40,11 +40,18 @@ body {
     text-align: center;
 }
 
-footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 4rem;
+body {
+  min-height: 900px;
+  margin-bottom: 100px;
+  clear: both;
+}
+
+.container{
+ text-align: center; 
+}
+
+.sell_form{
+  text-align: center; 
 }
 
 ul {
@@ -214,9 +221,175 @@ body {
 }
 .product-image img {
   max-width: 100%;
-  max-width: 200px
+  max-width: 200pxcler
 }
 .product-info {
   margin-top: auto;
 }
 /* END OF JINAN CSS Search Page */
+
+/*CSS Product Detail Page */
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+ 
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 15px;
+  display: flex;
+}
+/* Columns */
+.left-column {
+  width: 65%;
+  position: relative;
+}
+ 
+.right-column {
+  width: 35%;
+  margin-top: 60px;
+}
+/* Left Column */
+.left-column img {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: all 0.3s ease;
+}
+ 
+.left-column img.active {
+  opacity: 1;
+}
+/* Product Description */
+.product-description {
+  border-bottom: 1px solid #E1E8EE;
+  margin-bottom: 20px;
+}
+.product-description span {
+  font-size: 12px;
+  color: #358ED7;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.product-description h1 {
+  font-weight: 300;
+  font-size: 52px;
+  color: #43484D;
+  letter-spacing: -2px;
+}
+.product-description p {
+  font-size: 16px;
+  font-weight: 300;
+  color: #86939E;
+  line-height: 24px;
+}
+/* Responsive */
+@media (max-width: 940px) {
+  .container {
+    flex-direction: column;
+    margin-top: 60px;
+  }
+ 
+  .left-column,
+  .right-column {
+    width: 100%;
+  }
+ 
+  .left-column img {
+    width: 300px;
+    right: 0;
+    top: -65px;
+    left: initial;
+  }
+}
+ 
+@media (max-width: 535px) {
+  .left-column img {
+    width: 220px;
+    top: -85px;
+  }
+}
+
+.mySlides {display:none;}
+/*END OF CSS Product Detail Page */
+
+/*CSS accountHistory Page */
+.tablink {
+  background-color: #555;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 25%;
+}
+
+.tablink:hover {
+  background-color: #777;
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+  color: white;
+  display: none;
+  padding: 100px 20px;
+  height: 100%;
+}
+
+#Brought {background-color: black;}
+#Selling {background-color: black;}
+#Sold {background-color: black;}
+#Contact {background-color: Black;}
+
+body{background-color:#6a1b9a}
+button.accordion{
+  cursor:pointer;
+  border:none;
+  outline:none;
+  width:100%;
+  text-align:left;
+  background-color:transparent;
+  color:#fff;
+  padding:8px;
+  margin:4px 0;
+  border-radius:4px;
+  transition:0.3s;
+}
+
+button.accordion:hover{
+  background-color:rgba(255,255,255,0.3);
+}
+
+button.accordion.active{
+  background-color:#fff;
+  color:#000;
+  border-radius:4px 4px 0 0;
+  margin:4px 0 0;
+ }
+
+div.panel{
+  background-color:rgba(255,255,255,0.8);
+  color:#000;
+  border-radius:0 0 4px 4px;
+  overflow:hidden;
+  opacity:0;
+  max-height:0;
+  transition:0.3s;
+  padding:0 8px;
+  margin:0;
+}
+
+div.panel.show{
+  opacity:1;
+  max-height:500px;
+  padding:8px;
+  margin:2px 0 4px;
+}
+/* END OF CSS accountHistory Page */
