@@ -3,9 +3,10 @@ module.exports = {
     getHomePage: (req, res) => {
             let query = "SELECT * FROM `Category`"; // query database to get all the categories
             let loggedUsername = '';
-            if(req.session.user.username){
+            if(req.session.user != undefined){
                 let loggedUsername = req.session.user.firstName;
             }
+            console.log("logged details -->",req.session.user );
             db.query(query, (err, result) => {
                 if (err) {
                     res.redirect('/');
@@ -108,8 +109,13 @@ module.exports = {
                     db.query(query, (err, result) => {
                         if (err) {
                             return res.status(500).send(err);
+                        }else{
+                            var userDetails = {};
+                            userDetails.username = username;
+                            userDetails.firstName = firstName;
+                            req.session.user = userDetails;
+                            res.redirect('/');
                         }
-                        res.redirect('/');
             });
         }        
     },
